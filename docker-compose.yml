@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-29 21:42
+# last modified: 2022-01-30 00:10
 
 version: "3.9"
 
@@ -29,23 +29,11 @@ services:
       - "./share/dumps:/app/dumps"
 
   #
-  # client-mqtt
+  # client-aiocoap
   #
-  client-mqtt:
-    build: client-mqtt
-    container_name: client-mqtt
-    cap_add:
-      - NET_ADMIN
-    networks:
-      operator_net:
-        ipv4_address: 192.168.12.2
-
-  #
-  # client-coap
-  #
-  client-coap:
-    build: client-coap
-    container_name: client-coap
+  client-aiocoap:
+    build: aiocoap
+    container_name: client-aiocoap
     cap_add:
       - NET_ADMIN
     environment:
@@ -75,12 +63,46 @@ services:
         ipv4_address: 192.168.12.4
 
   #
-  # thingsboard
+  # client-coap-cli
   #
-  thingsboard:
+  client-coap-cli:
+    build: coap-cli
+    container_name: client-coap-cli
+    cap_add:
+      - NET_ADMIN
+    environment:
+      GATEWAY: 192.168.12.254
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.5
+
+  #
+  # client-californium
+  #
+  client-californium:
+    build:
+      context: ./californium
+      target: client
+    container_name: client-californium
+    cap_add:
+      - NET_ADMIN
+    environment:
+      GATEWAY: 192.168.12.254
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.6
+
+  #
+  # server-thingsboard
+  #
+  server-thingsboard:
     restart: always
     image: thingsboard/tb-postgres
-    container_name: thingsboard
+    container_name: server-thingsboard
     cap_add:
       - NET_ADMIN
     ports:
@@ -118,23 +140,14 @@ services:
       inter_net:
         ipv4_address: 192.168.11.101
 
-  mosquitto:
-    image: eclipse-mosquitto
-    container_name: mosquitto
-    ports:
-      - 1884:1883
-    volumes:
-      - "./mosquitto:/mosquitto"
-      - "./share/dumps:/app/dumps"
-    networks:
-      inter_net:
-        ipv4_address: 192.168.11.102
-
-  emqx:
+  #
+  # server-emqx
+  #
+  server-emqx:
     image: emqx/emqx:latest
-    container_name: emqx
+    container_name: server-emqx
     environment:
-      - "EMQX_NAME=emqx"
+      - "EMQX_NAME=server-emqx"
     ports:
       - 8081:8081     # http.management
       - 18083:18083   # http.dashboard
@@ -163,6 +176,22 @@ services:
     networks:
       inter_net:
         ipv4_address: 192.168.11.104
+  
+  #
+  # server-californium
+  #
+  server-californium:
+    build:
+      context: ./californium
+      target: server
+    container_name: server-californium
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.105
 
 ###
 ### sensor  --- [operator_net] ------- router-bts ------- [inter_net] ------- server
