@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "coap-cli": "^0.9.2"
+  }
+}
