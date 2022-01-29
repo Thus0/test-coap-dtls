@@ -1,0 +1,188 @@
+# file: docker-compose.yml
+#        author: Thus0
+# last modified: 2022-01-29 21:42
+
+version: "3.9"
+
+services:
+
+  #
+  # router-bts
+  #
+  router-bts:
+    build: router-bts
+    container_name: router-bts
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.254
+      inter_net:
+        ipv4_address: 192.168.11.254
+    restart: unless-stopped
+    sysctls:
+      - net.ipv4.ip_forward=1
+      - net.ipv6.conf.all.disable_ipv6=1
+    volumes:
+      - "./share/dumps:/app/dumps"
+
+  #
+  # client-mqtt
+  #
+  client-mqtt:
+    build: client-mqtt
+    container_name: client-mqtt
+    cap_add:
+      - NET_ADMIN
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.2
+
+  #
+  # client-coap
+  #
+  client-coap:
+    build: client-coap
+    container_name: client-coap
+    cap_add:
+      - NET_ADMIN
+    environment:
+      GATEWAY: 192.168.12.254
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.3
+
+  #
+  # client-libcoap
+  #
+  client-libcoap:
+    build:
+      context: ./libcoap
+      target: client
+    container_name: client-libcoap
+    cap_add:
+      - NET_ADMIN
+    environment:
+      GATEWAY: 192.168.12.254
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.4
+
+  #
+  # thingsboard
+  #
+  thingsboard:
+    restart: always
+    image: thingsboard/tb-postgres
+    container_name: thingsboard
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 9090:9090
+      - 1883:1883   # MQTT
+      - 8883:8883   # MQTTS
+      - 7070:7070
+      - 5683-5688:5683-5688/udp
+    # https://thingsboard.io/docs/user-guide/install/config/
+    environment:
+      COAP_DTLS_ENABLED: true
+      COAP_DTLS_CREDENTIALS_TYPE: "PEM"
+      COAP_DTLS_PEM_CERT: "ssl/thingsboard.pem"
+      COAP_DTLS_PEM_KEY: "ssl/thingsboard.key"
+      COAP_DTLS_BIND_PORT: 5684
+      TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT: false
+      COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT: false
+      TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT: 86400000
+      COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT: 86400000
+      TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT: 1800000
+      COAP_X509_DTLS_SESSION_REPORT_TIMEOUT: 1800000
+      MQTT_SSL_ENABLED: true
+      MQTT_SSL_CREDENTIALS_TYPE: "PEM"
+      MQTT_SSL_PEM_CERT: "ssl/thingsboard.pem"
+      MQTT_SSL_PEM_KEY: "ssl/thingsboard.key"
+      MQTT_SSL_BIND_PORT: 8883
+      MQTT_SSL_PROTOCOL: "TLSv1.2"
+      MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT: false  
+    volumes:
+      - "./thingsboard/data:/data"
+      - "./thingsboard/log:/var/log/thingsboard"
+      - "./thingsboard/conf:/usr/share/thingsboard/conf"
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.101
+
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    ports:
+      - 1884:1883
+    volumes:
+      - "./mosquitto:/mosquitto"
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.102
+
+  emqx:
+    image: emqx/emqx:latest
+    container_name: emqx
+    environment:
+      - "EMQX_NAME=emqx"
+    ports:
+      - 8081:8081     # http.management
+      - 18083:18083   # http.dashboard
+      - 1883:1883     # mqtt:tcp
+      - 5683:5683     # coap:udp
+      - 5684:5684     # coap:dtls
+      - 8883:8883     # mqtt:tls
+    volumes:
+      - "./emqx/data:/opt/emqx/data"
+      - "./emqx/etc:/opt/emqx/etc"
+      - "./emqx/log:/opt/emqx/log"
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.103
+
+  server-libcoap:
+    build:
+      context: ./libcoap
+      target: server
+    container_name: server-libcoap
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.104
+
+###
+### sensor  --- [operator_net] ------- router-bts ------- [inter_net] ------- server
+###              192.168.12.x         .254    .254       192.168.11.x 
+
+networks:
+    operator_net:
+      driver: bridge
+      enable_ipv6: false
+      ipam:
+        driver: default
+        config:
+          - subnet: 192.168.12.0/24
+            gateway: 192.168.12.254
+    inter_net:
+      driver: bridge
+      enable_ipv6: false
+      ipam:
+        driver: default
+        config:
+          - subnet: 192.168.11.0/24
+            gateway: 192.168.11.1
+
