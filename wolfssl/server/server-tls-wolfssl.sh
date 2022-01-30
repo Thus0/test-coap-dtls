@@ -1,10 +1,10 @@
 #!/bin/sh
-# description: DTLS server with mbedtls library
+# description: TLS server with wolfssl library
 # environment variables:
 #   - DTLS_PORT (default: 5684)
 #
 #        author: Thus0
-# last modified: 2022-01-30 14:42
+# last modified: 2022-01-30 16:01
 
 # Exit on first error
 set -e
@@ -13,9 +13,9 @@ set -e
 [ -z ${DTLS_PORT} ] && DTLS_PORT=5684
 
 # Configuration
-COAPS_BIN="/app/wolfssl/examples/server"
+SERVER_BIN="/app/wolfssl/examples/server"
 
-# TLS 1.3 server
-"${COAPS_BIN}" -v 4 -b -p 5684 -d -e
+# TLS 1.3 server echo
+"${SERVER_BIN}" -v 4 -b -p ${DTLS_PROT} -d -e
 
 # vim: set sw=4 expandtab:
