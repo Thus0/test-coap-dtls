@@ -18,6 +18,10 @@ mkdir -p "${PREFIX}"
 cd /app || exit 1
 git clone --depth 1 https://github.com/eclipse/californium.git
 
+# Copy local files
+cp -r /app/demo-apps /app/californium/
+rm -rf /app/demo-apps
+
 # Build californium
 cd /app/californium || exit 1
 mvn clean install -DskipTests

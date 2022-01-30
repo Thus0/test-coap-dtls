@@ -3,19 +3,17 @@ LABEL maintainer="Thus0"
 
 # STAGE1 : build base image
 RUN apk update && apk upgrade && \
-    apk add vim tcpdump tshark && \
-    apk add openssl openssl-dev && \
-    apk add mbedtls mbedtls-utils mbedtls-dev && \
-    apk add gnutls gnutls-utils gnutls-dev && \
+    apk add vim openssl openssl-dev && \
     apk add autoconf automake make && \
-    apk add gcc libc-dev libtool git && \
-    apk add maven
+    apk add git maven
 
 # Change working directory
 WORKDIR /app
 
+# Copy files
+COPY files /app/
+
 # Build and install californium library
-COPY files/build-californium.sh /app/build-californium.sh
 RUN ./build-californium.sh
 
 # STAGE2 : build client image
