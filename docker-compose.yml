@@ -1,17 +1,17 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 00:48
+# last modified: 2022-01-30 01:35
 
 version: "3.9"
 
 services:
 
   #
-  # router-bts
+  # router-coap
   #
-  router-bts:
-    build: router-bts
-    container_name: router-bts
+  router-coap
+    build: router
+    container_name: router-coap
     privileged: true
     cap_add:
       - NET_ADMIN
