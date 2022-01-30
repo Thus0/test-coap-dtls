@@ -1,18 +1,30 @@
-FROM alpine:latest
+FROM alpine:latest as base
 LABEL maintainer="Thus0"
 
+# STAGE1 : build aiocoap
 RUN apk update && apk upgrade && \
-    apk add vim tcpdump tshark openssl openssl-dev mbedtls mbedtls-utils mbedtls-dev gnutls gnutls-utils gnutls-dev && \
-    apk add autoconf automake make gcc libc-dev libtool git asciidoc
-
-RUN apk add libcoap && \
+    apk add vim openssl openssl-dev && \
+    apk add autoconf automake make asciidoc && \
+    apk add gcc libc-dev libtool git && \
+    apk add libcoap && \
     apk add python3 python3-dev py3-pip py3-psutil 
 
-COPY files /app
+# Change working directory
 WORKDIR /app
 
-# python COAP implementation (requirements.txt)
+# Copy files
+COPY files /app
+
+# Build aiocoap
 RUN pip install -r requirements.txt
 
-# default command
-CMD ["/app/entrypoint.sh"]
+# STAGE2 : build client image
+FROM base as client
+COPY client /app/client/
+CMD ["/app/client/entrypoint.sh"]
+
+# STAGE2 : build server image
+FROM base as server
+COPY server /app/server/
+CMD ["/app/server/entrypoint.sh"]
+
