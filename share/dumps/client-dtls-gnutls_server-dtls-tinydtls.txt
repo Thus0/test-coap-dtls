@@ -1,0 +1,264 @@
+No.     Time           Source                Destination           Protocol Length Info
+      1 0.000000000    192.168.12.10         192.168.11.110        DTLSv1.0 231    Client Hello
+
+Frame 1: 231 bytes on wire (1848 bits), 231 bytes captured (1848 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0a (02:42:c0:a8:0c:0a), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.10, Dst: 192.168.11.110
+User Datagram Protocol, Src Port: 58012, Dst Port: 5684
+    Source Port: 58012
+    Destination Port: 5684
+    Length: 197
+    Checksum: 0x999f [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (189 bytes)
+Datagram Transport Layer Security
+    DTLSv1.0 Record Layer: Handshake Protocol: Client Hello
+        Content Type: Handshake (22)
+        Version: DTLS 1.0 (0xfeff)
+        Epoch: 0
+        Sequence Number: 0
+        Length: 176
+        Handshake Protocol: Client Hello
+            Handshake Type: Client Hello (1)
+            Length: 164
+            Message Sequence: 0
+            Fragment Offset: 0
+            Fragment Length: 164
+            Version: DTLS 1.2 (0xfefd)
+            Random: b33771181ca6a5a704df41c2d547661095536ad2ca482ae88b0aaddb99194766
+            Session ID Length: 0
+            Cookie Length: 0
+            Cipher Suites Length: 32
+            Cipher Suites (16 suites)
+            Compression Methods Length: 1
+            Compression Methods (1 method)
+            Extensions Length: 90
+            Extension: status_request (len=5)
+            Extension: client_certificate_type (len=3)
+            Extension: server_certificate_type (len=3)
+            Extension: supported_groups (len=8)
+            Extension: ec_point_formats (len=2)
+            Extension: signature_algorithms (len=22)
+            Extension: encrypt_then_mac (len=0)
+            Extension: extended_master_secret (len=0)
+            Extension: session_ticket (len=0)
+            Extension: renegotiation_info (len=1)
+            Extension: record_size_limit (len=2)
+            [JA3 Fullstring: 65277,49196-52393-49325-49324-49326-49200-52392-157-49309-49308-49312-159-52394-49311-49310-49314,5-19-20-10-11-13-22-23-35-65281-28,24-25-260,0]
+            [JA3: fdf239c56f168b6ca697313b3a1e0499]
+
+No.     Time           Source                Destination           Protocol Length Info
+      2 0.000139858    192.168.11.110        192.168.12.10         DTLSv1.0 86     Hello Verify Request
+
+Frame 2: 86 bytes on wire (688 bits), 86 bytes captured (688 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0a (02:42:c0:a8:0c:0a)
+Internet Protocol Version 4, Src: 192.168.11.110, Dst: 192.168.12.10
+User Datagram Protocol, Src Port: 5684, Dst Port: 58012
+    Source Port: 5684
+    Destination Port: 58012
+    Length: 52
+    Checksum: 0x990e [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (44 bytes)
+Datagram Transport Layer Security
+    DTLSv1.0 Record Layer: Handshake Protocol: Hello Verify Request
+        Content Type: Handshake (22)
+        Version: DTLS 1.0 (0xfeff)
+        Epoch: 0
+        Sequence Number: 0
+        Length: 31
+        Handshake Protocol: Hello Verify Request
+            Handshake Type: Hello Verify Request (3)
+            Length: 19
+            Message Sequence: 0
+            Fragment Offset: 0
+            Fragment Length: 19
+            Version: DTLS 1.2 (0xfefd)
+            Cookie Length: 16
+            Cookie: 1594cdab6fd8f9f98d2411c6560fcb95
+
+No.     Time           Source                Destination           Protocol Length Info
+      3 0.001323799    192.168.12.10         192.168.11.110        DTLSv1.0 247    Client Hello
+
+Frame 3: 247 bytes on wire (1976 bits), 247 bytes captured (1976 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0a (02:42:c0:a8:0c:0a), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.10, Dst: 192.168.11.110
+User Datagram Protocol, Src Port: 58012, Dst Port: 5684
+    Source Port: 58012
+    Destination Port: 5684
+    Length: 213
+    Checksum: 0x99af [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (205 bytes)
+Datagram Transport Layer Security
+    DTLSv1.0 Record Layer: Handshake Protocol: Client Hello
+        Content Type: Handshake (22)
+        Version: DTLS 1.0 (0xfeff)
+        Epoch: 0
+        Sequence Number: 1
+        Length: 192
+        Handshake Protocol: Client Hello
+            Handshake Type: Client Hello (1)
+            Length: 180
+            Message Sequence: 1
+            Fragment Offset: 0
+            Fragment Length: 180
+            Version: DTLS 1.2 (0xfefd)
+            Random: b33771181ca6a5a704df41c2d547661095536ad2ca482ae88b0aaddb99194766
+            Session ID Length: 0
+            Cookie Length: 16
+            Cookie: 1594cdab6fd8f9f98d2411c6560fcb95
+            Cipher Suites Length: 32
+            Cipher Suites (16 suites)
+            Compression Methods Length: 1
+            Compression Methods (1 method)
+            Extensions Length: 90
+            Extension: status_request (len=5)
+            Extension: client_certificate_type (len=3)
+            Extension: server_certificate_type (len=3)
+            Extension: supported_groups (len=8)
+            Extension: ec_point_formats (len=2)
+            Extension: signature_algorithms (len=22)
+            Extension: encrypt_then_mac (len=0)
+            Extension: extended_master_secret (len=0)
+            Extension: session_ticket (len=0)
+            Extension: renegotiation_info (len=1)
+            Extension: record_size_limit (len=2)
+            [JA3 Fullstring: 65277,49196-52393-49325-49324-49326-49200-52392-157-49309-49308-49312-159-52394-49311-49310-49314,5-19-20-10-11-13-22-23-35-65281-28,24-25-260,0]
+            [JA3: fdf239c56f168b6ca697313b3a1e0499]
+
+No.     Time           Source                Destination           Protocol Length Info
+      4 1.002516141    192.168.12.10         192.168.11.110        DTLSv1.0 247    Client Hello
+
+Frame 4: 247 bytes on wire (1976 bits), 247 bytes captured (1976 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0a (02:42:c0:a8:0c:0a), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.10, Dst: 192.168.11.110
+User Datagram Protocol, Src Port: 58012, Dst Port: 5684
+    Source Port: 58012
+    Destination Port: 5684
+    Length: 213
+    Checksum: 0x99af [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (205 bytes)
+Datagram Transport Layer Security
+    DTLSv1.0 Record Layer: Handshake Protocol: Client Hello
+        Content Type: Handshake (22)
+        Version: DTLS 1.0 (0xfeff)
+        Epoch: 0
+        Sequence Number: 2
+        Length: 192
+        Handshake Protocol: Client Hello
+            Handshake Type: Client Hello (1)
+            Length: 180
+            Message Sequence: 1
+            Fragment Offset: 0
+            Fragment Length: 180
+            Version: DTLS 1.2 (0xfefd)
+            Random: b33771181ca6a5a704df41c2d547661095536ad2ca482ae88b0aaddb99194766
+            Session ID Length: 0
+            Cookie Length: 16
+            Cookie: 1594cdab6fd8f9f98d2411c6560fcb95
+            Cipher Suites Length: 32
+            Cipher Suites (16 suites)
+            Compression Methods Length: 1
+            Compression Methods (1 method)
+            Extensions Length: 90
+            Extension: status_request (len=5)
+            Extension: client_certificate_type (len=3)
+            Extension: server_certificate_type (len=3)
+            Extension: supported_groups (len=8)
+            Extension: ec_point_formats (len=2)
+            Extension: signature_algorithms (len=22)
+            Extension: encrypt_then_mac (len=0)
+            Extension: extended_master_secret (len=0)
+            Extension: session_ticket (len=0)
+            Extension: renegotiation_info (len=1)
+            Extension: record_size_limit (len=2)
+            [JA3 Fullstring: 65277,49196-52393-49325-49324-49326-49200-52392-157-49309-49308-49312-159-52394-49311-49310-49314,5-19-20-10-11-13-22-23-35-65281-28,24-25-260,0]
+            [JA3: fdf239c56f168b6ca697313b3a1e0499]
+
+No.     Time           Source                Destination           Protocol Length Info
+      5 4.006007109    192.168.12.10         192.168.11.110        DTLSv1.0 247    Client Hello
+
+Frame 5: 247 bytes on wire (1976 bits), 247 bytes captured (1976 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0a (02:42:c0:a8:0c:0a), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.10, Dst: 192.168.11.110
+User Datagram Protocol, Src Port: 58012, Dst Port: 5684
+    Source Port: 58012
+    Destination Port: 5684
+    Length: 213
+    Checksum: 0x99af [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (205 bytes)
+Datagram Transport Layer Security
+    DTLSv1.0 Record Layer: Handshake Protocol: Client Hello
+        Content Type: Handshake (22)
+        Version: DTLS 1.0 (0xfeff)
+        Epoch: 0
+        Sequence Number: 3
+        Length: 192
+        Handshake Protocol: Client Hello
+            Handshake Type: Client Hello (1)
+            Length: 180
+            Message Sequence: 1
+            Fragment Offset: 0
+            Fragment Length: 180
+            Version: DTLS 1.2 (0xfefd)
+            Random: b33771181ca6a5a704df41c2d547661095536ad2ca482ae88b0aaddb99194766
+            Session ID Length: 0
+            Cookie Length: 16
+            Cookie: 1594cdab6fd8f9f98d2411c6560fcb95
+            Cipher Suites Length: 32
+            Cipher Suites (16 suites)
+            Compression Methods Length: 1
+            Compression Methods (1 method)
+            Extensions Length: 90
+            Extension: status_request (len=5)
+            Extension: client_certificate_type (len=3)
+            Extension: server_certificate_type (len=3)
+            Extension: supported_groups (len=8)
+            Extension: ec_point_formats (len=2)
+            Extension: signature_algorithms (len=22)
+            Extension: encrypt_then_mac (len=0)
+            Extension: extended_master_secret (len=0)
+            Extension: session_ticket (len=0)
+            Extension: renegotiation_info (len=1)
+            Extension: record_size_limit (len=2)
+            [JA3 Fullstring: 65277,49196-52393-49325-49324-49326-49200-52392-157-49309-49308-49312-159-52394-49311-49310-49314,5-19-20-10-11-13-22-23-35-65281-28,24-25-260,0]
+            [JA3: fdf239c56f168b6ca697313b3a1e0499]
+
+No.     Time           Source                Destination           Protocol Length Info
+      6 7.498290557    192.168.11.110        192.168.12.10         DTLSv1.0 57     Alert (Level: Warning, Description: Close Notify)
+
+Frame 6: 57 bytes on wire (456 bits), 57 bytes captured (456 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0a (02:42:c0:a8:0c:0a)
+Internet Protocol Version 4, Src: 192.168.11.110, Dst: 192.168.12.10
+User Datagram Protocol, Src Port: 5684, Dst Port: 58012
+    Source Port: 5684
+    Destination Port: 58012
+    Length: 23
+    Checksum: 0x98f1 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (15 bytes)
+Datagram Transport Layer Security
+    DTLSv1.0 Record Layer: Alert (Level: Warning, Description: Close Notify)
+        Content Type: Alert (21)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 3
+        Length: 2
+        Alert Message
+            Level: Warning (1)
+            Description: Close Notify (0)
