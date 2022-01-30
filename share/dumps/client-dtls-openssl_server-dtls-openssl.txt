@@ -1,0 +1,296 @@
+No.     Time           Source                Destination           Protocol Length Info
+      1 0.000000000    192.168.12.14         192.168.11.114        DTLSv1.2 253    Client Hello
+
+Frame 1: 253 bytes on wire (2024 bits), 253 bytes captured (2024 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0e (02:42:c0:a8:0c:0e), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.14, Dst: 192.168.11.114
+User Datagram Protocol, Src Port: 39086, Dst Port: 5684
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: Client Hello
+        Content Type: Handshake (22)
+        Version: DTLS 1.0 (0xfeff)
+        Epoch: 0
+        Sequence Number: 0
+        Length: 198
+        Handshake Protocol: Client Hello
+            Handshake Type: Client Hello (1)
+            Length: 186
+            Message Sequence: 0
+            Fragment Offset: 0
+            Fragment Length: 186
+            Version: DTLS 1.2 (0xfefd)
+            Random: 174bdc0749dd15b846cf7c7d0e1bd00a4a8e30387056654673fe0c0cc535fc03
+            Session ID Length: 0
+            Cookie Length: 0
+            Cipher Suites Length: 56
+            Cipher Suites (28 suites)
+            Compression Methods Length: 1
+            Compression Methods (1 method)
+            Extensions Length: 88
+            Extension: ec_point_formats (len=4)
+            Extension: supported_groups (len=12)
+            Extension: session_ticket (len=0)
+            Extension: encrypt_then_mac (len=0)
+            Extension: extended_master_secret (len=0)
+            Extension: signature_algorithms (len=48)
+            [JA3 Fullstring: 65277,49196-49200-159-52393-52392-52394-49195-49199-158-49188-49192-107-49187-49191-103-49162-49172-57-49161-49171-51-157-156-61-60-53-47-255,11-10-35-22-23-13,29-23-30-25-24,0-1-2]
+            [JA3: f1bce39cbcf6d731907f687af766e975]
+
+No.     Time           Source                Destination           Protocol Length Info
+      2 0.000242506    192.168.11.114        192.168.12.14         DTLSv1.2 90     Hello Verify Request
+
+Frame 2: 90 bytes on wire (720 bits), 90 bytes captured (720 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0e (02:42:c0:a8:0c:0e)
+Internet Protocol Version 4, Src: 192.168.11.114, Dst: 192.168.12.14
+User Datagram Protocol, Src Port: 5684, Dst Port: 39086
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: Hello Verify Request
+        Content Type: Handshake (22)
+        Version: DTLS 1.0 (0xfeff)
+        Epoch: 0
+        Sequence Number: 0
+        Length: 35
+        Handshake Protocol: Hello Verify Request
+            Handshake Type: Hello Verify Request (3)
+            Length: 23
+            Message Sequence: 0
+            Fragment Offset: 0
+            Fragment Length: 23
+            Version: DTLS 1.0 (0xfeff)
+            Cookie Length: 20
+            Cookie: 493484eba04c095fb0a5680cd7c065e925043db0
+
+No.     Time           Source                Destination           Protocol Length Info
+      3 0.000475412    192.168.12.14         192.168.11.114        DTLSv1.2 273    Client Hello
+
+Frame 3: 273 bytes on wire (2184 bits), 273 bytes captured (2184 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0e (02:42:c0:a8:0c:0e), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.14, Dst: 192.168.11.114
+User Datagram Protocol, Src Port: 39086, Dst Port: 5684
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: Client Hello
+        Content Type: Handshake (22)
+        Version: DTLS 1.0 (0xfeff)
+        Epoch: 0
+        Sequence Number: 1
+        Length: 218
+        Handshake Protocol: Client Hello
+            Handshake Type: Client Hello (1)
+            Length: 206
+            Message Sequence: 1
+            Fragment Offset: 0
+            Fragment Length: 206
+            Version: DTLS 1.2 (0xfefd)
+            Random: 174bdc0749dd15b846cf7c7d0e1bd00a4a8e30387056654673fe0c0cc535fc03
+            Session ID Length: 0
+            Cookie Length: 20
+            Cookie: 493484eba04c095fb0a5680cd7c065e925043db0
+            Cipher Suites Length: 56
+            Cipher Suites (28 suites)
+            Compression Methods Length: 1
+            Compression Methods (1 method)
+            Extensions Length: 88
+            Extension: ec_point_formats (len=4)
+            Extension: supported_groups (len=12)
+            Extension: session_ticket (len=0)
+            Extension: encrypt_then_mac (len=0)
+            Extension: extended_master_secret (len=0)
+            Extension: signature_algorithms (len=48)
+            [JA3 Fullstring: 65277,49196-49200-159-52393-52392-52394-49195-49199-158-49188-49192-107-49187-49191-103-49162-49172-57-49161-49171-51-157-156-61-60-53-47-255,11-10-35-22-23-13,29-23-30-25-24,0-1-2]
+            [JA3: f1bce39cbcf6d731907f687af766e975]
+
+No.     Time           Source                Destination           Protocol Length Info
+      4 0.000925863    192.168.11.114        192.168.12.14         DTLSv1.2 270    Server Hello, Certificate (Fragment)
+
+Frame 4: 270 bytes on wire (2160 bits), 270 bytes captured (2160 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0e (02:42:c0:a8:0c:0e)
+Internet Protocol Version 4, Src: 192.168.11.114, Dst: 192.168.12.14
+User Datagram Protocol, Src Port: 5684, Dst Port: 39086
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: Server Hello
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 1
+        Length: 73
+        Handshake Protocol: Server Hello
+            Handshake Type: Server Hello (2)
+            Length: 61
+            Message Sequence: 1
+            Fragment Offset: 0
+            Fragment Length: 61
+            Version: DTLS 1.2 (0xfefd)
+            Random: 211acbe11c12b695d4dba692cb3a06ac9ff7197e0f7536942958310f0c27ddd6
+            Session ID Length: 0
+            Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 (0xc02c)
+            Compression Method: null (0)
+            Extensions Length: 21
+            Extension: renegotiation_info (len=1)
+            Extension: ec_point_formats (len=4)
+            Extension: session_ticket (len=0)
+            Extension: extended_master_secret (len=0)
+            [JA3S Fullstring: 65277,49196,65281-11-35-23]
+            [JA3S: 51e03b04c8c77175b5562a0e94e39f1c]
+    DTLSv1.2 Record Layer: Handshake Protocol: Certificate (Fragment)
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 2
+        Length: 129
+        Handshake Protocol: Certificate (Fragment)
+            Handshake Type: Certificate (11)
+            Length: 305
+            Message Sequence: 2
+            Fragment Offset: 0
+            Fragment Length: 117
+
+No.     Time           Source                Destination           Protocol Length Info
+      5 0.001151146    192.168.11.114        192.168.12.14         DTLSv1.2 255    Certificate (Reassembled)
+
+Frame 5: 255 bytes on wire (2040 bits), 255 bytes captured (2040 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0e (02:42:c0:a8:0c:0e)
+Internet Protocol Version 4, Src: 192.168.11.114, Dst: 192.168.12.14
+User Datagram Protocol, Src Port: 5684, Dst Port: 39086
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: Certificate (Reassembled)
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 3
+        Length: 200
+        Handshake Protocol: Certificate (Reassembled)
+            Handshake Type: Certificate (11)
+            Length: 305
+            Message Sequence: 2
+            Fragment Offset: 117
+            Fragment Length: 188
+            Certificates Length: 302
+            Certificates (302 bytes)
+                Certificate Length: 299
+                Certificate: 308201273081cd02142c76827ada2296d3b5ebaeec2cdc63c2848189b2300a06082a8648… (id-at-commonName=server)
+                    signedCertificate
+                        serialNumber: 0x2c76827ada2296d3b5ebaeec2cdc63c2848189b2
+                        signature (ecdsa-with-SHA256)
+                        issuer: rdnSequence (0)
+                        validity
+                        subject: rdnSequence (0)
+                        subjectPublicKeyInfo
+                    algorithmIdentifier (ecdsa-with-SHA256)
+                    Padding: 0
+                    encrypted: 3046022100d7a9e6d117bc379729c900599515859713508bc0c333e2a3b628e0056ac9c7…
+        [2 Message fragments (305 bytes): #4(117), #5(188)]
+
+No.     Time           Source                Destination           Protocol Length Info
+      6 0.001185996    192.168.11.114        192.168.12.14         DTLSv1.2 203    Server Key Exchange, Server Hello Done
+
+Frame 6: 203 bytes on wire (1624 bits), 203 bytes captured (1624 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0e (02:42:c0:a8:0c:0e)
+Internet Protocol Version 4, Src: 192.168.11.114, Dst: 192.168.12.14
+User Datagram Protocol, Src Port: 5684, Dst Port: 39086
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: Server Key Exchange
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 4
+        Length: 123
+        Handshake Protocol: Server Key Exchange
+            Handshake Type: Server Key Exchange (12)
+            Length: 111
+            Message Sequence: 3
+            Fragment Offset: 0
+            Fragment Length: 111
+            EC Diffie-Hellman Server Params
+    DTLSv1.2 Record Layer: Handshake Protocol: Server Hello Done
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 5
+        Length: 12
+        Handshake Protocol: Server Hello Done
+            Handshake Type: Server Hello Done (14)
+            Length: 0
+            Message Sequence: 4
+            Fragment Offset: 0
+            Fragment Length: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      7 0.002048632    192.168.12.14         192.168.11.114        DTLSv1.2 175    Client Key Exchange, Change Cipher Spec, Encrypted Handshake Message
+
+Frame 7: 175 bytes on wire (1400 bits), 175 bytes captured (1400 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0e (02:42:c0:a8:0c:0e), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.14, Dst: 192.168.11.114
+User Datagram Protocol, Src Port: 39086, Dst Port: 5684
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: Client Key Exchange
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 2
+        Length: 45
+        Handshake Protocol: Client Key Exchange
+            Handshake Type: Client Key Exchange (16)
+            Length: 33
+            Message Sequence: 2
+            Fragment Offset: 0
+            Fragment Length: 33
+            EC Diffie-Hellman Client Params
+    DTLSv1.2 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec
+        Content Type: Change Cipher Spec (20)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 3
+        Length: 1
+        Change Cipher Spec Message
+    Record Layer
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 1
+        Sequence Number: 0
+        Length: 48
+        Handshake Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+      8 0.002281841    192.168.11.114        192.168.12.14         DTLSv1.2 247    New Session Ticket, Change Cipher Spec
+
+Frame 8: 247 bytes on wire (1976 bits), 247 bytes captured (1976 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0e (02:42:c0:a8:0c:0e)
+Internet Protocol Version 4, Src: 192.168.11.114, Dst: 192.168.12.14
+User Datagram Protocol, Src Port: 5684, Dst Port: 39086
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: New Session Ticket
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 6
+        Length: 178
+        Handshake Protocol: New Session Ticket
+            Handshake Type: New Session Ticket (4)
+            Length: 166
+            Message Sequence: 5
+            Fragment Offset: 0
+            Fragment Length: 166
+            TLS Session Ticket
+    DTLSv1.2 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec
+        Content Type: Change Cipher Spec (20)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 7
+        Length: 1
+        Change Cipher Spec Message
+
+No.     Time           Source                Destination           Protocol Length Info
+      9 0.002315806    192.168.11.114        192.168.12.14         DTLSv1.2 103    Encrypted Handshake Message
+
+Frame 9: 103 bytes on wire (824 bits), 103 bytes captured (824 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0e (02:42:c0:a8:0c:0e)
+Internet Protocol Version 4, Src: 192.168.11.114, Dst: 192.168.12.14
+User Datagram Protocol, Src Port: 5684, Dst Port: 39086
+Datagram Transport Layer Security
+    Record Layer
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 1
+        Sequence Number: 0
+        Length: 48
+        Handshake Protocol

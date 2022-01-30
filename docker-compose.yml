@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 21:18
+# last modified: 2022-01-30 23:05
 
 version: "3.9"
 
@@ -254,6 +254,26 @@ services:
       operator_net:
         ipv4_address: 192.168.12.13
 
+  #
+  # client-openssl
+  #
+  client-openssl:
+    build:
+      context: ./openssl
+      target: client
+    container_name: client-openssl
+    cap_add:
+      - NET_ADMIN
+    environment:
+      DTLS_SERVER: 192.168.11.114
+      DTLS_PORT: 5684
+      GATEWAY: 192.168.12.254
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.14
+
 ######################################################################
 # DTLS SERVERS
 ######################################################################
@@ -418,6 +438,21 @@ services:
       inter_net:
         ipv4_address: 192.168.11.113
 
+  #
+  # server-openssl
+  #
+  server-openssl:
+    build:
+      context: ./openssl
+      target: server
+    container_name: server-openssl
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.114
 
 ######################################################################
 # COAP SERVERS
