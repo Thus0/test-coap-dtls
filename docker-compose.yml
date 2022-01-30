@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 14:18
+# last modified: 2022-01-30 17:17
 
 version: "3.9"
 
@@ -167,6 +167,46 @@ services:
         ipv4_address: 192.168.12.9
 
   #
+  # client-tinydtls
+  #
+  client-tinydtls:
+    build:
+      context: ./tinydtls
+      target: client
+    container_name: client-tinydtls
+    cap_add:
+      - NET_ADMIN
+    environment:
+      DTLS_SERVER: 192.168.11.110
+      DTLS_PORT: 5684
+      GATEWAY: 192.168.12.254
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.10
+  
+  #
+  # client-boringssl
+  #
+  client-boringssl:
+    build:
+      context: ./boringssl
+      target: client
+    container_name: client-boringssl
+    cap_add:
+      - NET_ADMIN
+    environment:
+      DTLS_SERVER: 192.168.11.111
+      DTLS_PORT: 5684
+      GATEWAY: 192.168.12.254
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.11
+
+  #
   # server-thingsboard
   #
   server-thingsboard:
@@ -307,6 +347,36 @@ services:
         ipv4_address: 192.168.11.109
 
   #
+  # server-tinydtls
+  #
+  server-tinydtls:
+    build:
+      context: ./tinydtls
+      target: server
+    container_name: server-tinydtls
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.110
+
+  #
+  # server-boringssl
+  #
+  server-boringssl:
+    build:
+      context: ./boringssl
+      target: server
+    container_name: server-boringssl
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.111
 
   #
   # server-emqx
