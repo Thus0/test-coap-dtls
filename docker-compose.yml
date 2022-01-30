@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 00:10
+# last modified: 2022-01-30 00:48
 
 version: "3.9"
 
@@ -32,7 +32,9 @@ services:
   # client-aiocoap
   #
   client-aiocoap:
-    build: aiocoap
+    build:
+      context: ./aiocoap
+      target: client
     container_name: client-aiocoap
     cap_add:
       - NET_ADMIN
@@ -192,6 +194,24 @@ services:
     networks:
       inter_net:
         ipv4_address: 192.168.11.105
+
+  #
+  # server-aiocoap
+  #
+  server-aiocoap:
+    build:
+      context: ./aiocoap
+      target: server
+    container_name: server-aiocoap
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.106
+
+###
 
 ###
 ### sensor  --- [operator_net] ------- router-bts ------- [inter_net] ------- server
