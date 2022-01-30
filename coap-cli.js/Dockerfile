@@ -2,15 +2,20 @@ FROM alpine:latest
 LABEL maintainer="Thus0"
 
 RUN apk update && apk upgrade && \
-    apk add vim tcpdump tshark openssl openssl-dev mbedtls mbedtls-utils mbedtls-dev gnutls gnutls-utils gnutls-dev && \
-    apk add autoconf automake make gcc libc-dev libtool git asciidoc
+    apk add vim openssl openssl-dev && \
+    apk add mbedtls mbedtls-utils mbedtls-dev && \
+    apk add gnutls gnutls-utils gnutls-dev && \
+    apk add autoconf automake make asciidoc && \
+    apk add gcc libc-dev libtool git && \
+    apk add npm
 
-RUN apk add npm
+# Change working dirctory
+WORKDIR /app
 
+# Copy files
 COPY files /app
 
-# npm COAP implementation
-WORKDIR /app
+# Build coap-cli.js 
 RUN npm install
 
 # default command
