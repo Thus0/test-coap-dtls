@@ -17,9 +17,10 @@ gnutls-serv \
     --debug=8 \
     --echo \
     --udp \
-    --port=${DTLS_PORT} \
+    --disable-client-cert \
     --rawpkkeyfile=ssl/server.key \
     --rawpkfile=ssl/server.pub \
-    --priority=NONE:+VERS-DTLS1.2:+ECDHE-AES-128-CCM-8:+MAC-ALL:+SIGN-ECDSA-SHA256:+GROUP-SECP256R1:+CTYPE-RAWPK \
+    --priority=SECURE256:+VERS-DTLS1.2:+AES-128-CCM-8:+MAC-ALL:+SIGN-ECDSA-SHA256:+CTYPE-RAWPK \
+    --port=${DTLS_PORT}
 
 # vim: set sw=4 expandtab:

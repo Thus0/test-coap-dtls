@@ -27,11 +27,16 @@ CERTIFICATE_TYPES="+CTYPE-RAWPK:+CTYPE-CLI-RAWPK"
 # DTLS client
 gnutls-cli \
     --debug=8 \
-    --tofu \
+    --no-tofu --no-strict-tofu \
+    --no-dane --no-local-dns \
+    --no-ca-verification --no-ocsp \
     --udp \
-    --rawpkkeyfile=ssl/client2.key \
-    --rawpkfile=ssl/client2.pub \
+    --rawpkkeyfile=ssl/client.key \
+    --rawpkfile=ssl/client.pub \
     --priority=SECURE256:+VERS-DTLS1.2:+AES-128-CCM:+MAC-SHA256:+SIGN-ECDSA-SHA256:+ECDHE-ECDSA:+CTYPE-RAWPK \
-    --port=${DTLS_PORT} ${DTLS_SERVER}
+    --port=${DTLS_PORT} \
+    --disable-sni \
+    --logfile=/app/dumps/client-dtls-gnutls.log \
+    ${DTLS_SERVER}
 
 # vim: set sw=4 expandtab:
