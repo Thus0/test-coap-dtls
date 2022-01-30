@@ -1,7 +1,7 @@
 FROM alpine:latest as base
 LABEL maintainer="Thus0"
 
-# STAGE1 : build libcoap
+# STAGE1 : build base image
 RUN apk update && apk upgrade && \
     apk add vim openssl openssl-dev && \
     apk add gnutls gnutls-utils gnutls-dev && \

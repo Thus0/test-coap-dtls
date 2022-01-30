@@ -1,6 +1,7 @@
 FROM alpine:latest
 LABEL maintainer="Thus0"
 
+# STAGE1 : build base image
 RUN apk update && apk upgrade && \
     apk add vim openssl openssl-dev && \
     apk add mbedtls mbedtls-utils mbedtls-dev && \

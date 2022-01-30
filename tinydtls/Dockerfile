@@ -1,7 +1,7 @@
 FROM alpine:latest as base
 LABEL maintainer="Thus0"
 
-# STAGE1 : build library
+# STAGE1 : build base image
 RUN apk update && apk upgrade && \
     apk add vim openssl openssl-dev && \
     apk add gnutls gnutls-utils && \
@@ -14,7 +14,7 @@ WORKDIR /app
 # Copy files
 COPY files /app
 
-# Build tinydtls
+# Build and install tinydtls library
 RUN ./build-tinydtls.sh
 
 # STAGE2 : build client image

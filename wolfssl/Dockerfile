@@ -1,7 +1,7 @@
 FROM alpine:latest as base
 LABEL maintainer="Thus0"
 
-# STAGE1 : build libcoap
+# STAGE1 : build base image
 RUN apk update && apk upgrade && \
     apk add vim openssl openssl-dev && \
     apk add autoconf automake make && \
@@ -14,7 +14,7 @@ WORKDIR /app
 # Copy files
 COPY files /app
 
-# Build wolfssl
+# Build and install WolfSSL
 RUN ./build-wolfssl.sh
 
 # STAGE2 : build client image

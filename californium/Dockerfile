@@ -1,7 +1,7 @@
 FROM alpine:latest as base
 LABEL maintainer="Thus0"
 
-# STAGE1 : build californium
+# STAGE1 : build base image
 RUN apk update && apk upgrade && \
     apk add vim tcpdump tshark && \
     apk add openssl openssl-dev && \
@@ -14,7 +14,7 @@ RUN apk update && apk upgrade && \
 # Change working directory
 WORKDIR /app
 
-# Build californium
+# Build and install californium library
 COPY files/build-californium.sh /app/build-californium.sh
 RUN ./build-californium.sh
 

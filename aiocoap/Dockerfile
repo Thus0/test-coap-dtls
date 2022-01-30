@@ -1,7 +1,7 @@
 FROM alpine:latest as base
 LABEL maintainer="Thus0"
 
-# STAGE1 : build aiocoap
+# STAGE1 : build base image
 RUN apk update && apk upgrade && \
     apk add vim openssl openssl-dev && \
     apk add autoconf automake make asciidoc && \
@@ -15,7 +15,7 @@ WORKDIR /app
 # Copy files
 COPY files /app
 
-# Build aiocoap
+# Build and install aiocoap
 RUN pip install -r requirements.txt
 
 # STAGE2 : build client image

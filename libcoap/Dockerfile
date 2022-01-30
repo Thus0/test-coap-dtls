@@ -1,7 +1,7 @@
 FROM alpine:latest as base
 LABEL maintainer="Thus0"
 
-# STAGE1 : build libcoap
+# STAGE1 : build base image
 RUN apk update && apk upgrade && \
     apk add vim openssl openssl-dev && \
     apk add mbedtls mbedtls-utils mbedtls-dev && \
@@ -15,7 +15,7 @@ WORKDIR /app
 # Copy files
 COPY files /app
 
-# Build libcoap
+# Build and install libcoap
 RUN ./build-libcoap.sh
 
 # STAGE2 : build client image
