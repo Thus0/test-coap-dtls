@@ -1,8 +1,10 @@
 #!/bin/sh
-# description: COAP publish in command line
-# author: Thus0
-# last modified: 2022-01-29 21:03
+# description: COAPS client in command line
+#
+#        author: Thus0
+# last modified: 2022-01-30 23:26
 
+# Exit on firt error
 set -e
 
 # Configuration variables
@@ -19,7 +21,7 @@ memory_used=$(free -k | grep Mem: | awk '{print $3}')
 # Payload
 PAYLOAD="{'memory_used':${memory_used}, 'lib':'${COAPS_LIB}', 'proto':'coaps', 'auth':'token'}"
 
-# Publish data with COAP plain
+# Publish data 
 "${COAPS_BIN}" -v 6 -m POST \
     -M "${COAPS_RPK}" -n \
     -e "${PAYLOAD}" \

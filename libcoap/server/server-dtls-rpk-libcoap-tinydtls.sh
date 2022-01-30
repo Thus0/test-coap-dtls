@@ -1,8 +1,10 @@
 #!/bin/sh
-# description: COAP publish in command line
-# author: Thus0
-# last modified: 2022-01-29 21:14
+# description: COAPS server in command line
+#
+#        author: Thus0
+# last modified: 2022-01-30 23:26
 
+# Exit on first error
 set -e
 
 # Configuration variables
@@ -12,7 +14,7 @@ COAP_PORT=5683
 COAPS_PORT=5684
 COAPS_RPK="ssl/server.key"
 
-# DTLS server
+# COAPS server
 "${COAPS_BIN}" -v 6 \
     -p "${COAP_PORT}" \
     -M "${COAPS_RPK}" -n 
