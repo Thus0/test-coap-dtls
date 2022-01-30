@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 13:18
+# last modified: 2022-01-30 14:18
 
 version: "3.9"
 
@@ -145,6 +145,26 @@ services:
     networks:
       operator_net:
         ipv4_address: 192.168.12.8
+  
+  #
+  # client-wolfssl
+  #
+  client-wolfssl:
+    build:
+      context: ./wolfssl
+      target: client
+    container_name: client-wolfssl
+    cap_add:
+      - NET_ADMIN
+    environment:
+      DTLS_SERVER: 192.168.11.109
+      DTLS_PORT: 5684
+      GATEWAY: 192.168.12.254
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.9
 
   #
   # server-thingsboard
@@ -269,6 +289,24 @@ services:
     networks:
       inter_net:
         ipv4_address: 192.168.11.108
+
+  #
+  # server-wolfssl
+  #
+  server-wolfssl:
+    build:
+      context: ./wolfssl
+      target: server
+    container_name: server-wolfssl
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.109
+
+  #
 
   #
   # server-emqx
