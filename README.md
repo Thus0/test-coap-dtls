@@ -1,7 +1,7 @@
 # test COAPS / COAP-DTLS
 
 * author: Thus0
-* last modified: 2022-01-30 17:33
+* last modified: 2022-01-30 19:00
 
 # architecture
 
@@ -14,11 +14,11 @@
 
 * [Google BoringSSL](https://github.com/google/boringssl) (go)
 * [Eclipse Californium](https://www.eclipse.org/californium/) (java)
-* [GnuTLS](https://www.gnutls.org/)
+* [GnuTLS](https://www.gnutls.org/) (C)
 * [libcoap](https://libcoap.net/) (C)
-* [Mbed TLS](https://tls.mbed.org/)
-* [OpenSSL](https://www.openssl.org/)
-* [tinydtls](https://projects.eclipse.org/projects/iot.tinydtls)
+* [Mbed TLS](https://tls.mbed.org/) (C)
+* [OpenSSL](https://www.openssl.org/) (C)
+* [tinydtls](https://projects.eclipse.org/projects/iot.tinydtls) (C)
 * [wolfSSL](https://wolfssl.com) (C)
 
 # COAPS frameworks
