@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 12:59
+# last modified: 2022-01-30 13:18
 
 version: "3.9"
 
@@ -127,6 +127,26 @@ services:
         ipv4_address: 192.168.12.7
 
   #
+  # client-mbedtls
+  #
+  client-mbedtls:
+    build:
+      context: ./mbedtls
+      target: client
+    container_name: client-mbedtls
+    cap_add:
+      - NET_ADMIN
+    environment:
+      DTLS_SERVER: 192.168.11.108
+      DTLS_PORT: 5684
+      GATEWAY: 192.168.12.254
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.8
+
+  #
   # server-thingsboard
   #
   server-thingsboard:
@@ -223,9 +243,9 @@ services:
   #
   server-gnutls:
     build:
-      context: ./aiocoap
+      context: ./gnutls
       target: server
-    container_name: server-aiocoap
+    container_name: server-gnutls
     cap_add:
       - NET_ADMIN
     volumes:
@@ -233,6 +253,22 @@ services:
     networks:
       inter_net:
         ipv4_address: 192.168.11.107
+
+  #
+  # server-mbedtls
+  #
+  server-mbedtls:
+    build:
+      context: ./mbedtls
+      target: server
+    container_name: server-mbedtls
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.108
 
   #
   # server-emqx
