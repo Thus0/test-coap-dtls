@@ -1,11 +1,11 @@
 #!/bin/sh
 # description: DTLS client with californium framework
 # environment variables:
-#   - DTLS_SERVER
-#   - DTLS_PORT
+#   - DTLS_SERVER (default: 192.168.11.105)
+#   - DTLS_PORT   (default: 5684)
 #
 #        author: Thus0
-# last modified: 2022-01-30 12:14
+# last modified: 2022-01-30 13:02
 
 # Exit on first error
 set -e

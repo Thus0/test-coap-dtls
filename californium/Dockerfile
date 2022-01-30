@@ -7,7 +7,7 @@ RUN apk update && apk upgrade && \
     apk add openssl openssl-dev && \
     apk add mbedtls mbedtls-utils mbedtls-dev && \
     apk add gnutls gnutls-utils gnutls-dev && \
-    apk add autoconf automake make asciidoc && \
+    apk add autoconf automake make && \
     apk add gcc libc-dev libtool git && \
     apk add maven
 
