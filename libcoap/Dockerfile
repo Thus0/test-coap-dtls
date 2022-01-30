@@ -3,16 +3,19 @@ LABEL maintainer="Thus0"
 
 # STAGE1 : build libcoap
 RUN apk update && apk upgrade && \
-    apk add vim tcpdump tshark && \
-    apk add openssl openssl-dev && \
+    apk add vim openssl openssl-dev && \
     apk add mbedtls mbedtls-utils mbedtls-dev && \
     apk add gnutls gnutls-utils gnutls-dev && \
-    apk add autoconf automake make gcc libc-dev libtool && \
-    apk add git asciidoc
+    apk add autoconf automake make asciidoc && \
+    apk add gcc libc-dev libtool git
 
-# build libcoap
-COPY files/build-libcoap.sh /app/build-libcoap.sh
+# Change working directory
 WORKDIR /app
+
+# Copy files
+COPY files /app
+
+# Build libcoap
 RUN ./build-libcoap.sh
 
 # STAGE2 : build client image

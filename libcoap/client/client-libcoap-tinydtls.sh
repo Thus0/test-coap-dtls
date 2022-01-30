@@ -9,8 +9,7 @@ set -e
 COAPS_BIN=coap-client-tinydtls
 COAPS_HOST=192.168.11.104
 COAPS_PORT=5684
-COAPS_ACCESS_TOKEN="4v9relSSOk3XhmDnk7aO"
-COAPS_REST="/api/v1/${COAPS_ACCESS_TOKEN}/telemetry"
+COAPS_REST="/"
 COAPS_LIB="libcoap"
 COAPS_RPK="ssl/client.key"
 
