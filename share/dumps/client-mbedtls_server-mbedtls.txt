@@ -1,0 +1,400 @@
+No.     Time           Source                Destination           Protocol Length Info
+      1 0.000000000    192.168.12.8          192.168.11.108        DTLSv1.2 393    Client Hello
+
+Frame 1: 393 bytes on wire (3144 bits), 393 bytes captured (3144 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:08 (02:42:c0:a8:0c:08), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.8, Dst: 192.168.11.108
+User Datagram Protocol, Src Port: 50949, Dst Port: 5684
+    Source Port: 50949
+    Destination Port: 5684
+    Length: 359
+    Checksum: 0x9a3d [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (351 bytes)
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: Client Hello
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 0
+        Length: 338
+        Handshake Protocol: Client Hello
+            Handshake Type: Client Hello (1)
+            Length: 326
+            Message Sequence: 0
+            Fragment Offset: 0
+            Fragment Length: 326
+            Version: DTLS 1.2 (0xfefd)
+            Random: 61f68a93dfe9a62049974b7af3b445bc867c8fdde2a188b6f92836da5bb72686
+            Session ID Length: 0
+            Cookie Length: 0
+            Cipher Suites Length: 208
+            Cipher Suites (104 suites)
+            Compression Methods Length: 1
+            Compression Methods (1 method)
+            Extensions Length: 76
+            Extension: server_name (len=14)
+            Extension: signature_algorithms (len=14)
+            Extension: supported_groups (len=18)
+            Extension: ec_point_formats (len=2)
+            Extension: encrypt_then_mac (len=0)
+            Extension: extended_master_secret (len=0)
+            Extension: session_ticket (len=0)
+            [JA3 Fullstring [truncated]: 65277,52392-52393-52394-49196-49200-159-49325-49311-49188-49192-107-49162-49172-57-49327-49315-49287-49291-49277-49267-49271-196-136-49245-49249-49235-49225-49229-49221-49195-49199-158-49324-49310-49187-49191-1]
+            [JA3: 2295da872812ad7727047bbf3f8c3fbd]
+
+No.     Time           Source                Destination           Protocol Length Info
+      2 0.000258038    192.168.11.108        192.168.12.8          DTLSv1.2 102    Hello Verify Request
+
+Frame 2: 102 bytes on wire (816 bits), 102 bytes captured (816 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:08 (02:42:c0:a8:0c:08)
+Internet Protocol Version 4, Src: 192.168.11.108, Dst: 192.168.12.8
+User Datagram Protocol, Src Port: 5684, Dst Port: 50949
+    Source Port: 5684
+    Destination Port: 50949
+    Length: 68
+    Checksum: 0x991a [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (60 bytes)
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: Hello Verify Request
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 0
+        Length: 47
+        Handshake Protocol: Hello Verify Request
+            Handshake Type: Hello Verify Request (3)
+            Length: 35
+            Message Sequence: 0
+            Fragment Offset: 0
+            Fragment Length: 35
+            Version: DTLS 1.2 (0xfefd)
+            Cookie Length: 32
+            Cookie: 61f68a9344629c2c985edbd78b3c8d00aa55847a225d16ecbf1e301b4f33b295
+
+No.     Time           Source                Destination           Protocol Length Info
+      3 0.000365415    192.168.12.8          192.168.11.108        DTLSv1.2 425    Client Hello
+
+Frame 3: 425 bytes on wire (3400 bits), 425 bytes captured (3400 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:08 (02:42:c0:a8:0c:08), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.8, Dst: 192.168.11.108
+User Datagram Protocol, Src Port: 50949, Dst Port: 5684
+    Source Port: 50949
+    Destination Port: 5684
+    Length: 391
+    Checksum: 0x9a5d [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (383 bytes)
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: Client Hello
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 1
+        Length: 370
+        Handshake Protocol: Client Hello
+            Handshake Type: Client Hello (1)
+            Length: 358
+            Message Sequence: 1
+            Fragment Offset: 0
+            Fragment Length: 358
+            Version: DTLS 1.2 (0xfefd)
+            Random: 61f68a93dfe9a62049974b7af3b445bc867c8fdde2a188b6f92836da5bb72686
+            Session ID Length: 0
+            Cookie Length: 32
+            Cookie: 61f68a9344629c2c985edbd78b3c8d00aa55847a225d16ecbf1e301b4f33b295
+            Cipher Suites Length: 208
+            Cipher Suites (104 suites)
+            Compression Methods Length: 1
+            Compression Methods (1 method)
+            Extensions Length: 76
+            Extension: server_name (len=14)
+            Extension: signature_algorithms (len=14)
+            Extension: supported_groups (len=18)
+            Extension: ec_point_formats (len=2)
+            Extension: encrypt_then_mac (len=0)
+            Extension: extended_master_secret (len=0)
+            Extension: session_ticket (len=0)
+            [JA3 Fullstring [truncated]: 65277,52392-52393-52394-49196-49200-159-49325-49311-49188-49192-107-49162-49172-57-49327-49315-49287-49291-49277-49267-49271-196-136-49245-49249-49235-49225-49229-49221-49195-49199-158-49324-49310-49187-49191-1]
+            [JA3: 2295da872812ad7727047bbf3f8c3fbd]
+
+No.     Time           Source                Destination           Protocol Length Info
+      4 0.003756699    192.168.11.108        192.168.12.8          IPv4     1514   Fragmented IP protocol (proto=UDP 17, off=0, ID=41f2)
+
+Frame 4: 1514 bytes on wire (12112 bits), 1514 bytes captured (12112 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:08 (02:42:c0:a8:0c:08)
+Internet Protocol Version 4, Src: 192.168.11.108, Dst: 192.168.12.8
+Data (1480 bytes)
+
+0000  16 34 c7 05 0d c7 ea 85 16 fe fd 00 00 00 00 00   .4..............
+0010  00 00 01 00 63 02 00 00 57 00 01 00 00 00 00 00   ....c...W.......
+0020  57 fe fd 61 f6 8a 93 fa 35 1c 69 3c bd 52 4d b1   W..a....5.i<.RM.
+0030  13 10 cc 6d e1 25 93 af 98 ec 38 a0 a9 cb 05 fe   ...m.%....8.....
+0040  54 75 cc 20 cd 92 94 0f 0e 06 68 70 30 11 4c db   Tu. ......hp0.L.
+0050  5c 50 1e 74 81 01 39 a9 9d eb 4f fd f5 02 7b b7   \P.t..9...O...{.
+0060  e2 28 d1 f9 cc a8 00 00 0f ff 01 00 01 00 00 17   .(..............
+0070  00 00 00 0b 00 02 01 00 16 fe fd 00 00 00 00 00   ................
+0080  00 00 02 0b e8 0b 00 0b dc 00 02 00 00 00 00 0b   ................
+0090  dc 00 0b d9 00 03 3b 30 82 03 37 30 82 02 1f a0   ......;0..70....
+00a0  03 02 01 02 02 01 02 30 0d 06 09 2a 86 48 86 f7   .......0...*.H..
+00b0  0d 01 01 0b 05 00 30 3b 31 0b 30 09 06 03 55 04   ......0;1.0...U.
+00c0  06 13 02 4e 4c 31 11 30 0f 06 03 55 04 0a 0c 08   ...NL1.0...U....
+00d0  50 6f 6c 61 72 53 53 4c 31 19 30 17 06 03 55 04   PolarSSL1.0...U.
+00e0  03 0c 10 50 6f 6c 61 72 53 53 4c 20 54 65 73 74   ...PolarSSL Test
+00f0  20 43 41 30 1e 17 0d 31 39 30 32 31 30 31 34 34    CA0...190210144
+0100  34 30 36 5a 17 0d 32 39 30 32 31 30 31 34 34 34   406Z..2902101444
+0110  30 36 5a 30 34 31 0b 30 09 06 03 55 04 06 13 02   06Z041.0...U....
+0120  4e 4c 31 11 30 0f 06 03 55 04 0a 0c 08 50 6f 6c   NL1.0...U....Pol
+0130  61 72 53 53 4c 31 12 30 10 06 03 55 04 03 0c 09   arSSL1.0...U....
+0140  6c 6f 63 61 6c 68 6f 73 74 30 82 01 22 30 0d 06   localhost0.."0..
+0150  09 2a 86 48 86 f7 0d 01 01 01 05 00 03 82 01 0f   .*.H............
+0160  00 30 82 01 0a 02 82 01 01 00 c1 4d a3 dd e7 cd   .0.........M....
+0170  1d d1 04 d7 49 72 b8 99 ac 0e 78 e4 3a 3c 4a cf   ....Ir....x.:<J.
+0180  3a 13 16 d0 5a e4 cd a3 00 88 a7 ee 1e 6b 96 a7   :...Z........k..
+0190  52 b4 90 ef 2d 72 7a 3e 24 9a fc b6 34 ac 24 f5   R...-rz>$...4.$.
+01a0  77 e0 26 64 8c 9c b0 28 7d a1 da ea 8c e6 c9 1c   w.&d...(}.......
+01b0  96 bc fe c1 04 52 b3 36 d4 a3 fa e1 b1 76 d8 90   .....R.6.....v..
+01c0  c1 61 b4 66 52 36 a2 26 53 aa ab 74 5e 07 7d 19   .a.fR6.&S..t^.}.
+01d0  82 db 2a d8 1f a0 d9 0d 1c 2d 49 66 f7 5b 25 73   ..*......-If.[%s
+01e0  46 e8 0b 8a 4f 69 0c b5 00 90 e1 da 82 10 66 7d   F...Oi........f}
+01f0  ae 54 2b 8b 65 79 91 a1 e2 61 c3 cd 40 49 08 ee   .T+.ey...a..@I..
+0200  68 0c f1 8b 86 d2 46 bf d0 b8 aa 11 03 1e 7f 56   h.....F........V
+0210  a8 1a 1e 44 18 0f 0f 85 8b da 8b 44 5e e2 18 c6   ...D.......D^...
+0220  62 2f c7 66 8d fa 5d d8 7d f3 27 89 29 01 c5 90   b/.f..].}.'.)...
+0230  0e 3f 27 f1 30 c8 4a 0e ef d6 de c7 c7 27 6b c7   .?'.0.J......'k.
+0240  05 3d 7a c4 02 3c 9a 1d 3e 0f e8 34 98 5b cb 73   .=z..<..>..4.[.s
+0250  4b 52 96 d8 11 a2 2c 80 88 69 39 5a d3 0f b0 de   KR....,..i9Z....
+0260  59 2f 11 c7 f7 ea 12 01 30 97 02 03 01 00 01 a3   Y/......0.......
+0270  4d 30 4b 30 09 06 03 55 1d 13 04 02 30 00 30 1d   M0K0...U....0.0.
+0280  06 03 55 1d 0e 04 16 04 14 a5 05 e8 64 b8 dc df   ..U.........d...
+0290  60 0f 50 12 4d 60 a8 64 af 4d 8b 43 93 30 1f 06   `.P.M`.d.M.C.0..
+02a0  03 55 1d 23 04 18 30 16 80 14 b4 5a e4 a5 b3 de   .U.#..0....Z....
+02b0  d2 52 f6 b9 d5 a6 95 0f eb 3e bc c7 fd ff 30 0d   .R.......>....0.
+02c0  06 09 2a 86 48 86 f7 0d 01 01 0b 05 00 03 82 01   ..*.H...........
+02d0  01 00 2e 3a e4 52 61 3e a7 a5 ef 32 67 80 72 07   ...:.Ra>...2g.r.
+02e0  26 ba a3 ff 05 40 c4 60 05 39 31 77 f7 a5 ca 01   &....@.`.91w....
+02f0  31 80 a7 e1 d1 0a a2 7c d5 1c ba d0 23 4a d6 30   1......|....#J.0
+0300  f3 93 c7 6f e8 ce 94 1e 84 bb 44 81 62 33 ff 6b   ...o......D.b3.k
+0310  5d 00 9b 25 f8 8f 0f 9c 4c 4d e8 d9 a7 99 f9 51   ]..%....LM.....Q
+0320  81 c0 9b 1b 31 0d a6 b3 7c 0e 45 b8 18 64 7e 89   ....1...|.E..d~.
+0330  0a 2b a8 c3 e0 4a bd d4 2f 78 c4 62 9b e9 7e 3f   .+...J../x.b..~?
+0340  56 46 8f 17 b7 2a a0 10 70 fd b1 f1 6b 05 dc d1   VF...*..p...k...
+0350  41 0f 8e a6 b2 88 1a 42 61 4f eb 26 85 59 80 ba   A......BaO.&.Y..
+0360  85 54 fe cf c7 7b 2f 6b 59 ce ac dc 7c ac f3 c8   .T...{/kY...|...
+0370  d6 12 7e 64 e8 3c 99 a8 8f 4f 11 d9 9c 15 4b 6a   ..~d.<...O....Kj
+0380  44 92 2d 0c bf b1 67 96 c9 ac ce d5 19 eb 6f 18   D.-...g.......o.
+0390  eb 6e 04 2d 60 ac f4 7b 79 f0 1a 9b b5 c3 5d ef   .n.-`..{y.....].
+03a0  7d c9 05 99 44 81 84 75 c7 ec 00 12 fc 7a 4a 0b   }...D..u.....zJ.
+03b0  82 07 ec 6d 86 02 4d fe 9f c8 92 48 de f5 b1 9c   ...m..M....H....
+03c0  e9 c6 89 d0 c1 56 e8 a4 c6 6a 2e 66 c1 9b fe d6   .....V...j.f....
+03d0  3c b7 00 03 45 30 82 03 41 30 82 02 29 a0 03 02   <...E0..A0..)...
+03e0  01 02 02 01 03 30 0d 06 09 2a 86 48 86 f7 0d 01   .....0...*.H....
+03f0  01 0b 05 00 30 3b 31 0b 30 09 06 03 55 04 06 13   ....0;1.0...U...
+0400  02 4e 4c 31 11 30 0f 06 03 55 04 0a 0c 08 50 6f   .NL1.0...U....Po
+0410  6c 61 72 53 53 4c 31 19 30 17 06 03 55 04 03 0c   larSSL1.0...U...
+0420  10 50 6f 6c 61 72 53 53 4c 20 54 65 73 74 20 43   .PolarSSL Test C
+0430  41 30 1e 17 0d 31 39 30 32 31 30 31 34 34 34 30   A0...19021014440
+0440  30 5a 17 0d 32 39 30 32 31 30 31 34 34 34 30 30   0Z..290210144400
+0450  5a 30 3b 31 0b 30 09 06 03 55 04 06 13 02 4e 4c   Z0;1.0...U....NL
+0460  31 11 30 0f 06 03 55 04 0a 0c 08 50 6f 6c 61 72   1.0...U....Polar
+0470  53 53 4c 31 19 30 17 06 03 55 04 03 0c 10 50 6f   SSL1.0...U....Po
+0480  6c 61 72 53 53 4c 20 54 65 73 74 20 43 41 30 82   larSSL Test CA0.
+0490  01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01 05   ."0...*.H.......
+04a0  00 03 82 01 0f 00 30 82 01 0a 02 82 01 01 00 c0   ......0.........
+04b0  df 37 fc 17 bb e0 96 9d 3f 86 de 96 32 7d 44 a5   .7......?...2}D.
+04c0  16 a0 cd 21 f1 99 d4 ec ea cb 7c 18 58 08 94 a5   ...!......|.X...
+04d0  ec 9b c5 8b df 1a 1e 99 38 99 87 1e 7b c0 8d 39   ........8...{..9
+04e0  df 38 5d 70 78 07 d3 9e d9 93 e8 b9 72 51 c5 ce   .8]px.......rQ..
+04f0  a3 30 52 a9 f2 e7 40 70 14 cb 44 a2 72 0b c2 e5   .0R...@p..D.r...
+0500  40 f9 3e e5 a6 0e b3 f9 ec 4a 63 c0 b8 29 00 74   @.>......Jc..).t
+0510  9c 57 3b a8 a5 04 90 71 f1 bd 83 d9 3f d6 a5 e2   .W;....q....?...
+0520  3c 2a 8f ef 27 60 c3 c6 9f cb ba ec 60 7d b7 e6   <*..'`......`}..
+0530  84 32 be 4f fb 58 26 22 03 5b d4 b4 d5 fb f5 e3   .2.O.X&".[......
+0540  96 2e 70 c0 e4 2e bd fc 2e ee e2 41 55 c0 34 2e   ..p........AU.4.
+0550  7d 24 72 69 cb 47 b1 14 40 83 7d 67 f4 86 f6 31   }$ri.G..@.}g...1
+0560  ab f1 79 a4 b2 b5 2e 12 f9 84 17 f0 62 6f 27 3e   ..y.........bo'>
+0570  13 58 b1 54 0d 21 9a 73 37 a1 30 cf 6f 92 dc f6   .X.T.!.s7.0.o...
+0580  e9 fc ac db 2e 28 d1 7e 02 4b 23 a0 15 f2 38 65   .....(.~.K#...8e
+0590  64 09 ea 0c 6e 8e 1b 17 a0 71 c8 b3 9b c9 ab e9   d...n....q......
+05a0  c3 f2 cf 87 96 8f 80 02 32 9e 99 58 6f a2 d5 02   ........2..Xo...
+05b0  03 01 00 01 a3 50 30 4e 30 0c 06 03 55 1d 13 04   .....P0N0...U...
+05c0  05 30 03 01 01 ff 30 1d                           .0....0.
+
+No.     Time           Source                Destination           Protocol Length Info
+      5 0.005862585    192.168.12.8          192.168.11.108        DTLSv1.2 167    Client Key Exchange, Change Cipher Spec, Encrypted Handshake Message
+
+Frame 5: 167 bytes on wire (1336 bits), 167 bytes captured (1336 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:08 (02:42:c0:a8:0c:08), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.8, Dst: 192.168.11.108
+User Datagram Protocol, Src Port: 50949, Dst Port: 5684
+    Source Port: 50949
+    Destination Port: 5684
+    Length: 133
+    Checksum: 0x995b [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (125 bytes)
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Handshake Protocol: Client Key Exchange
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 2
+        Length: 45
+        Handshake Protocol: Client Key Exchange
+            Handshake Type: Client Key Exchange (16)
+            Length: 33
+            Message Sequence: 2
+            Fragment Offset: 0
+            Fragment Length: 33
+    DTLSv1.2 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec
+        Content Type: Change Cipher Spec (20)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 3
+        Length: 1
+        Change Cipher Spec Message
+    Record Layer
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 1
+        Sequence Number: 0
+        Length: 40
+        Handshake Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+      6 0.006873732    192.168.11.108        192.168.12.8          DTLSv1.2 109    Change Cipher Spec, Encrypted Handshake Message
+
+Frame 6: 109 bytes on wire (872 bits), 109 bytes captured (872 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:08 (02:42:c0:a8:0c:08)
+Internet Protocol Version 4, Src: 192.168.11.108, Dst: 192.168.12.8
+User Datagram Protocol, Src Port: 5684, Dst Port: 50949
+    Source Port: 5684
+    Destination Port: 50949
+    Length: 75
+    Checksum: 0x9921 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (67 bytes)
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec
+        Content Type: Change Cipher Spec (20)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 0
+        Sequence Number: 5
+        Length: 1
+        Change Cipher Spec Message
+    Record Layer
+        Content Type: Handshake (22)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 1
+        Sequence Number: 0
+        Length: 40
+        Handshake Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+      7 0.006966493    192.168.12.8          192.168.11.108        DTLSv1.2 80     Application Data
+
+Frame 7: 80 bytes on wire (640 bits), 80 bytes captured (640 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:08 (02:42:c0:a8:0c:08), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.8, Dst: 192.168.11.108
+User Datagram Protocol, Src Port: 50949, Dst Port: 5684
+    Source Port: 50949
+    Destination Port: 5684
+    Length: 46
+    Checksum: 0x9904 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (38 bytes)
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Application Data Protocol: coap
+        Content Type: Application Data (23)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 1
+        Sequence Number: 1
+        Length: 25
+        Encrypted Application Data: 6f043bc3b65862c4ba7abcfb881192727531573c239e0e7b94
+        [Application Data Protocol: coap]
+
+No.     Time           Source                Destination           Protocol Length Info
+      8 0.007033735    192.168.11.108        192.168.12.8          DTLSv1.2 80     Application Data
+
+Frame 8: 80 bytes on wire (640 bits), 80 bytes captured (640 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:08 (02:42:c0:a8:0c:08)
+Internet Protocol Version 4, Src: 192.168.11.108, Dst: 192.168.12.8
+User Datagram Protocol, Src Port: 5684, Dst Port: 50949
+    Source Port: 5684
+    Destination Port: 50949
+    Length: 46
+    Checksum: 0x9904 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (38 bytes)
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Application Data Protocol: coap
+        Content Type: Application Data (23)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 1
+        Sequence Number: 1
+        Length: 25
+        Encrypted Application Data: d447b186a1d0f5075974b6d67573808e099d8cb9e4d5827bca
+        [Application Data Protocol: coap]
+
+No.     Time           Source                Destination           Protocol Length Info
+      9 0.007064348    192.168.11.108        192.168.12.8          DTLSv1.2 73     Encrypted Alert
+
+Frame 9: 73 bytes on wire (584 bits), 73 bytes captured (584 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:08 (02:42:c0:a8:0c:08)
+Internet Protocol Version 4, Src: 192.168.11.108, Dst: 192.168.12.8
+User Datagram Protocol, Src Port: 5684, Dst Port: 50949
+    Source Port: 5684
+    Destination Port: 50949
+    Length: 39
+    Checksum: 0x98fd [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (31 bytes)
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Encrypted Alert
+        Content Type: Alert (21)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 1
+        Sequence Number: 2
+        Length: 18
+        Alert Message: Encrypted Alert
+
+No.     Time           Source                Destination           Protocol Length Info
+     10 0.007080825    192.168.12.8          192.168.11.108        DTLSv1.2 73     Encrypted Alert
+
+Frame 10: 73 bytes on wire (584 bits), 73 bytes captured (584 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:08 (02:42:c0:a8:0c:08), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.8, Dst: 192.168.11.108
+User Datagram Protocol, Src Port: 50949, Dst Port: 5684
+    Source Port: 50949
+    Destination Port: 5684
+    Length: 39
+    Checksum: 0x98fd [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+    UDP payload (31 bytes)
+Datagram Transport Layer Security
+    DTLSv1.2 Record Layer: Encrypted Alert
+        Content Type: Alert (21)
+        Version: DTLS 1.2 (0xfefd)
+        Epoch: 1
+        Sequence Number: 2
+        Length: 18
+        Alert Message: Encrypted Alert
