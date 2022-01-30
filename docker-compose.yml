@@ -212,8 +212,6 @@ services:
         ipv4_address: 192.168.11.106
 
 ###
-
-###
 ### sensor  --- [operator_net] ------- router-bts ------- [inter_net] ------- server
 ###              192.168.12.x         .254    .254       192.168.11.x 
 

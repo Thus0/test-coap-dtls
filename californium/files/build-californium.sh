@@ -1,20 +1,25 @@
 #!/bin/sh
-# vim: set sw=4 expandtab:
-#   description:
-#        author: Thus0
-# last modified: 2022-01-29 23:12
+#   description: build and install californium framework
 #
-# Copyright 2022 All rights reserved
+#        author: Thus0
+# Modified: 2022-01-29 23:12
 
+# Exit on undefined variable and first error
+set -u
+set -e
+
+# Configuration
 PREFIX=/usr/local
 
-# Clone libcoap repository
-cd /app
-git clone https://github.com/eclipse/californium.git
-
 # Create PREFIX directory
-mkdir ${PREFIX}
+mkdir -p "${PREFIX}"
+
+# Clone libcoap repository
+cd /app || exit 1
+git clone --depth 1 https://github.com/eclipse/californium.git
 
 # Build californium
-cd californium
+cd /app/californium || exit 1
 mvn clean install -DskipTests
+
+# vim: set sw=4 expandtab:
