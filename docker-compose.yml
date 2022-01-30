@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 01:35
+# last modified: 2022-01-30 01:53
 
 version: "3.9"
 
@@ -9,7 +9,7 @@ services:
   #
   # router-coap
   #
-  router-coap
+  router-coap:
     build: router
     container_name: router-coap
     privileged: true
@@ -103,7 +103,7 @@ services:
   #
   server-thingsboard:
     restart: always
-    image: thingsboard/tb-postgres
+    image: thingsboard/tb-postgres:3.3.3
     container_name: server-thingsboard
     cap_add:
       - NET_ADMIN
