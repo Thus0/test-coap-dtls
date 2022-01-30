@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 17:17
+# last modified: 2022-01-30 17:38
 
 version: "3.9"
 
@@ -207,6 +207,26 @@ services:
         ipv4_address: 192.168.12.11
 
   #
+  # client-freecoap
+  #
+  client-freecoap:
+    build:
+      context: ./freecoap
+      target: client
+    container_name: client-freecoap
+    cap_add:
+      - NET_ADMIN
+    environment:
+      DTLS_SERVER: 192.168.11.112
+      DTLS_PORT: 5684
+      GATEWAY: 192.168.12.254
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.12
+
+  #
   # server-thingsboard
   #
   server-thingsboard:
@@ -377,6 +397,24 @@ services:
     networks:
       inter_net:
         ipv4_address: 192.168.11.111
+
+  #
+  # server-freecoap
+  #
+  server-freecoap:
+    build:
+      context: ./freecoap
+      target: server
+    container_name: server-freecoap
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.111
+
+  #
 
   #
   # server-emqx
