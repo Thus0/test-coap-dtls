@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 01:53
+# last modified: 2022-01-30 12:10
 
 version: "3.9"
 
@@ -91,6 +91,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
+      DTLS_SERVER: 192.168.11.105
+      DTLS_PORT: 5684
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
