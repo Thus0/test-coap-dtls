@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 17:38
+# last modified: 2022-01-30 20:30
 
 version: "3.9"
 
@@ -412,9 +412,7 @@ services:
       - "./share/dumps:/app/dumps"
     networks:
       inter_net:
-        ipv4_address: 192.168.11.111
-
-  #
+        ipv4_address: 192.168.11.112
 
   #
   # server-emqx

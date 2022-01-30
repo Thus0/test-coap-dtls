@@ -1,13 +1,13 @@
 FROM alpine:latest as base
 LABEL maintainer="Thus0"
 
-# STAGE1 : build boringssl
+# STAGE1 : build base image
 RUN apk update && apk upgrade && \
     apk add vim openssl openssl-dev && \
     apk add gnutls gnutls-utils && \
     apk add autoconf automake make cmake ninja && \
     apk add gcc libc-dev libtool git && \
-    apk add perl samourai go g++ linux-headers
+    apk add perl samurai go g++ linux-headers
 
 # Change working directory
 WORKDIR /app
@@ -15,7 +15,7 @@ WORKDIR /app
 # Copy files
 COPY files /app
 
-# Build boringssl
+# Build and install BoringSSL library
 RUN ./build-boringssl.sh
 
 # STAGE2 : build client image

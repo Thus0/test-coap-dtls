@@ -1,0 +1,98 @@
+No.     Time           Source                Destination           Protocol Length Info
+      1 0.000000000    192.168.12.11         192.168.11.111        TCP      74     59986 → 5684 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=2456540803 TSecr=0 WS=128
+
+Frame 1: 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.11, Dst: 192.168.11.111
+Transmission Control Protocol, Src Port: 59986, Dst Port: 5684, Seq: 0, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      2 0.000091406    192.168.11.111        192.168.12.11         TCP      74     5684 → 59986 [SYN, ACK] Seq=0 Ack=1 Win=65160 Len=0 MSS=1460 SACK_PERM=1 TSval=3879056281 TSecr=2456540803 WS=128
+
+Frame 2: 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b)
+Internet Protocol Version 4, Src: 192.168.11.111, Dst: 192.168.12.11
+Transmission Control Protocol, Src Port: 5684, Dst Port: 59986, Seq: 0, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      3 0.000108087    192.168.12.11         192.168.11.111        TCP      66     59986 → 5684 [ACK] Seq=1 Ack=1 Win=64256 Len=0 TSval=2456540803 TSecr=3879056281
+
+Frame 3: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.11, Dst: 192.168.11.111
+Transmission Control Protocol, Src Port: 59986, Dst Port: 5684, Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      4 0.000388075    192.168.12.11         192.168.11.111        TLSv1.3  300    Client Hello
+
+Frame 4: 300 bytes on wire (2400 bits), 300 bytes captured (2400 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.11, Dst: 192.168.11.111
+Transmission Control Protocol, Src Port: 59986, Dst Port: 5684, Seq: 1, Ack: 1, Len: 234
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+      5 0.000416809    192.168.11.111        192.168.12.11         TCP      66     5684 → 59986 [ACK] Seq=1 Ack=235 Win=65024 Len=0 TSval=3879056281 TSecr=2456540803
+
+Frame 5: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b)
+Internet Protocol Version 4, Src: 192.168.11.111, Dst: 192.168.12.11
+Transmission Control Protocol, Src Port: 5684, Dst Port: 59986, Seq: 1, Ack: 235, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      6 0.001185041    192.168.11.111        192.168.12.11         TLSv1.3  655    Server Hello, Change Cipher Spec, Application Data
+
+Frame 6: 655 bytes on wire (5240 bits), 655 bytes captured (5240 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b)
+Internet Protocol Version 4, Src: 192.168.11.111, Dst: 192.168.12.11
+Transmission Control Protocol, Src Port: 5684, Dst Port: 59986, Seq: 1, Ack: 235, Len: 589
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+      7 0.001206881    192.168.12.11         192.168.11.111        TCP      66     59986 → 5684 [ACK] Seq=235 Ack=590 Win=64128 Len=0 TSval=2456540804 TSecr=3879056282
+
+Frame 7: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.11, Dst: 192.168.11.111
+Transmission Control Protocol, Src Port: 59986, Dst Port: 5684, Seq: 235, Ack: 590, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      8 0.001846799    192.168.12.11         192.168.11.111        TLSv1.3  130    Change Cipher Spec, Application Data
+
+Frame 8: 130 bytes on wire (1040 bits), 130 bytes captured (1040 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.11, Dst: 192.168.11.111
+Transmission Control Protocol, Src Port: 59986, Dst Port: 5684, Seq: 235, Ack: 590, Len: 64
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+      9 0.001879506    192.168.11.111        192.168.12.11         TCP      66     5684 → 59986 [ACK] Seq=590 Ack=299 Win=65024 Len=0 TSval=3879056283 TSecr=2456540805
+
+Frame 9: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b)
+Internet Protocol Version 4, Src: 192.168.11.111, Dst: 192.168.12.11
+Transmission Control Protocol, Src Port: 5684, Dst Port: 59986, Seq: 590, Ack: 299, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     10 2.344344730    192.168.12.11         192.168.11.111        TCP      66     59986 → 5684 [FIN, ACK] Seq=299 Ack=590 Win=64128 Len=0 TSval=2456543147 TSecr=3879056283
+
+Frame 10: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.11, Dst: 192.168.11.111
+Transmission Control Protocol, Src Port: 59986, Dst Port: 5684, Seq: 299, Ack: 590, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     11 2.344515556    192.168.11.111        192.168.12.11         TCP      66     5684 → 59986 [FIN, ACK] Seq=590 Ack=300 Win=65024 Len=0 TSval=3879058625 TSecr=2456543147
+
+Frame 11: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b)
+Internet Protocol Version 4, Src: 192.168.11.111, Dst: 192.168.12.11
+Transmission Control Protocol, Src Port: 5684, Dst Port: 59986, Seq: 590, Ack: 300, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     12 2.344553309    192.168.12.11         192.168.11.111        TCP      66     59986 → 5684 [ACK] Seq=300 Ack=591 Win=64128 Len=0 TSval=2456543147 TSecr=3879058625
+
+Frame 12: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: 02:42:c0:a8:0c:0b (02:42:c0:a8:0c:0b), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+Internet Protocol Version 4, Src: 192.168.12.11, Dst: 192.168.11.111
+Transmission Control Protocol, Src Port: 59986, Dst Port: 5684, Seq: 300, Ack: 591, Len: 0
