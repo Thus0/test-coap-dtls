@@ -7,12 +7,15 @@ RUN apk update && apk upgrade && \
     apk add openssl openssl-dev && \
     apk add mbedtls mbedtls-utils mbedtls-dev && \
     apk add gnutls gnutls-utils gnutls-dev && \
-    apk add autoconf automake make gcc libc-dev libtool && \
-    apk add git asciidoc maven
+    apk add autoconf automake make asciidoc && \
+    apk add gcc libc-dev libtool git && \
+    apk add maven
+
+# Change working directory
+WORKDIR /app
 
 # Build californium
 COPY files/build-californium.sh /app/build-californium.sh
-WORKDIR /app/
 RUN ./build-californium.sh
 
 # STAGE2 : build client image
@@ -24,6 +27,4 @@ CMD ["/app/client/entrypoint.sh"]
 FROM base as server
 COPY server /app/server/
 CMD ["/app/server/entrypoint.sh"]
-
-
 
