@@ -1,10 +1,14 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 20:30
+# last modified: 2022-01-30 21:18
 
 version: "3.9"
 
 services:
+
+######################################################################
+# PSEUDO ROUTER 
+######################################################################
 
   #
   # router-coap
@@ -27,6 +31,10 @@ services:
       - net.ipv6.conf.all.disable_ipv6=1
     volumes:
       - "./share/dumps:/app/dumps"
+
+######################################################################
+# DTLS CLIENTS
+######################################################################
 
   #
   # client-aiocoap
@@ -227,48 +235,28 @@ services:
         ipv4_address: 192.168.12.12
 
   #
-  # server-thingsboard
+  # client-piondtls
   #
-  server-thingsboard:
-    restart: always
-    image: thingsboard/tb-postgres:3.3.3
-    container_name: server-thingsboard
+  client-piondtls:
+    build:
+      context: ./piondtls
+      target: client
+    container_name: client-piondtls
     cap_add:
       - NET_ADMIN
-    ports:
-      - 9090:9090
-      - 1883:1883   # MQTT
-      - 8883:8883   # MQTTS
-      - 7070:7070
-      - 5683-5688:5683-5688/udp
-    # https://thingsboard.io/docs/user-guide/install/config/
     environment:
-      COAP_DTLS_ENABLED: true
-      COAP_DTLS_CREDENTIALS_TYPE: "PEM"
-      COAP_DTLS_PEM_CERT: "ssl/thingsboard.pem"
-      COAP_DTLS_PEM_KEY: "ssl/thingsboard.key"
-      COAP_DTLS_BIND_PORT: 5684
-      TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT: false
-      COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT: false
-      TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT: 86400000
-      COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT: 86400000
-      TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT: 1800000
-      COAP_X509_DTLS_SESSION_REPORT_TIMEOUT: 1800000
-      MQTT_SSL_ENABLED: true
-      MQTT_SSL_CREDENTIALS_TYPE: "PEM"
-      MQTT_SSL_PEM_CERT: "ssl/thingsboard.pem"
-      MQTT_SSL_PEM_KEY: "ssl/thingsboard.key"
-      MQTT_SSL_BIND_PORT: 8883
-      MQTT_SSL_PROTOCOL: "TLSv1.2"
-      MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT: false  
+      DTLS_SERVER: 192.168.11.113
+      DTLS_PORT: 5684
+      GATEWAY: 192.168.12.254
     volumes:
-      - "./thingsboard/data:/data"
-      - "./thingsboard/log:/var/log/thingsboard"
-      - "./thingsboard/conf:/usr/share/thingsboard/conf"
       - "./share/dumps:/app/dumps"
     networks:
-      inter_net:
-        ipv4_address: 192.168.11.101
+      operator_net:
+        ipv4_address: 192.168.12.13
+
+######################################################################
+# DTLS SERVERS
+######################################################################
 
   #
   # server-aiocoap
@@ -415,6 +403,71 @@ services:
         ipv4_address: 192.168.11.112
 
   #
+  # server-piondtls
+  #
+  server-piondtls:
+    build:
+      context: ./piondtls
+      target: server
+    container_name: server-piondtls
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.113
+
+
+######################################################################
+# COAP SERVERS
+######################################################################
+
+  #
+  # server-thingsboard
+  #
+  server-thingsboard:
+    restart: always
+    image: thingsboard/tb-postgres:3.3.3
+    container_name: server-thingsboard
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 9090:9090
+      - 1883:1883   # MQTT
+      - 8883:8883   # MQTTS
+      - 7070:7070
+      - 5683-5688:5683-5688/udp
+    # https://thingsboard.io/docs/user-guide/install/config/
+    environment:
+      COAP_DTLS_ENABLED: true
+      COAP_DTLS_CREDENTIALS_TYPE: "PEM"
+      COAP_DTLS_PEM_CERT: "ssl/thingsboard.pem"
+      COAP_DTLS_PEM_KEY: "ssl/thingsboard.key"
+      COAP_DTLS_BIND_PORT: 5684
+      TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT: false
+      COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT: false
+      TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT: 86400000
+      COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT: 86400000
+      TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT: 1800000
+      COAP_X509_DTLS_SESSION_REPORT_TIMEOUT: 1800000
+      MQTT_SSL_ENABLED: true
+      MQTT_SSL_CREDENTIALS_TYPE: "PEM"
+      MQTT_SSL_PEM_CERT: "ssl/thingsboard.pem"
+      MQTT_SSL_PEM_KEY: "ssl/thingsboard.key"
+      MQTT_SSL_BIND_PORT: 8883
+      MQTT_SSL_PROTOCOL: "TLSv1.2"
+      MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT: false  
+    volumes:
+      - "./thingsboard/data:/data"
+      - "./thingsboard/log:/var/log/thingsboard"
+      - "./thingsboard/conf:/usr/share/thingsboard/conf"
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.201
+
+  #
   # server-emqx
   #
   server-emqx:
@@ -436,13 +489,15 @@ services:
       - "./share/dumps:/app/dumps"
     networks:
       inter_net:
-        ipv4_address: 192.168.11.113
+        ipv4_address: 192.168.11.202
 
-###
+######################################################################
+# NETWORKS
+######################################################################
 
-###
-### sensor  --- [operator_net] ------- router-bts ------- [inter_net] ------- server
-###              192.168.12.x         .254    .254       192.168.11.x 
+##
+## sensor  --- [operator_net] ------- router-bts ------- [inter_net] ------- server
+##              192.168.12.x         .254    .254       192.168.11.x 
 
 networks:
     operator_net:
