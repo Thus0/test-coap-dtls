@@ -6,8 +6,8 @@
 # architecture
 
 ```
- COAPS sensor  --- [operator_net] ------- router-coap (NAT) ------- [inter_net] ------- COAPS server
-                    192.168.12.x        .254             .254        192.168.11.x 
+COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS server
+                  192.168.12.x     .254             .254   192.168.11.x 
 ```
 
 # DTLS libraries
@@ -19,15 +19,23 @@
   * patch demo [sc-dtls-example-client](https://github.com/Thus0/test-coap-dtls/blob/main/californium/files/demo-apps/sc-dtls-example-client/src/main/java/org/eclipse/californium/scandium/examples/ExampleDTLSClient.java) 
   * patch demo [sc-dtls-example-server](https://github.com/Thus0/test-coap-dtls/blob/main/californium/files/demo-apps/sc-dtls-example-server/src/main/java/org/eclipse/californium/scandium/examples/ExampleDTLSServer.java) 
 * [GnuTLS](https://www.gnutls.org/) (C)
-  * gnutls-cli
-  * gnutls-serv
+  * [gnutls-cli](https://gnutls.org/manual/html_node/gnutls_002dcli-Invocation.html)
+  * [gnutls-serv](https://gnutls.org/manual/html_node/gnutls_002dserv-Invocation.html)
 * [Mbed TLS](https://tls.mbed.org/) (C)
+  * [mbedtls_dtls_client](https://github.com/ARMmbed/mbedtls/blob/development/programs/ssl/dtls_client.c) 
+  * [mbedtls_dtls_server](https://github.com/ARMmbed/mbedtls/blob/development/programs/ssl/dtls_server.c)
 * [OpenSSL](https://www.openssl.org/) (C)
+  * [openssl s_client -dtls1_2](https://www.openssl.org/docs/man1.1.1/man1/s_client.html)
+  * [openssl s_server -dtls1_2](https://www.openssl.org/docs/man1.1.1/man1/s_server.html)
 * [Pion DTLS](https://github.com/pion/dtls) (go)
   * patch demo [client/main.go](https://github.com/Thus0/test-coap-dtls/blob/main/piondtls/client/examples/dial/client/main.go)
   * patch demo [server/main.go](https://github.com/Thus0/test-coap-dtls/blob/main/piondtls/server/examples/listen/server/main.go) 
 * [tinydtls](https://projects.eclipse.org/projects/iot.tinydtls) (C)
+  * TODO: patch demo [dtls-client](https://github.com/eclipse/tinydtls/blob/develop/tests/dtls-client.c)
+  * TODO: patch demo [dtls-server](https://github.com/eclipse/tinydtls/blob/develop/tests/dtls-server.c)
 * [wolfSSL](https://wolfssl.com) (C)
+  * [client](https://github.com/wolfSSL/wolfssl/blob/master/examples/client/client.c)
+  * [server](https://github.com/wolfSSL/wolfssl/blob/master/examples/server/server.c)
 
 # COAPS frameworks
 
@@ -45,3 +53,7 @@
   * DTLS-cert for CoAP implemented using GnuTLS with X.509 certificates (RFC 7252)
   * DTLS-rpk for CoAP implemented using tinydtls with raw public key(RFC 7252)
 
+# Serveur/Broker COAP
+
+* [Thingsboard]
+  * [CoAP over DTLS](https://thingsboard.io/docs/user-guide/coap-over-dtls/)
