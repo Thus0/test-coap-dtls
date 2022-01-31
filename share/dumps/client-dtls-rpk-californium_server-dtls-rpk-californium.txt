@@ -2,9 +2,63 @@ No.     Time           Source                Destination           Protocol Leng
       1 0.000000000    192.168.12.6          192.168.11.105        DTLSv1.2 193    Client Hello
 
 Frame 1: 193 bytes on wire (1544 bits), 193 bytes captured (1544 bits) on interface eth1, id 0
+    Interface id: 0 (eth1)
+        Interface name: eth1
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Jan 30, 2022 23:52:14.622885653 Paris, Madrid
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1643583134.622885653 seconds
+    [Time delta from previous captured frame: 0.000000000 seconds]
+    [Time delta from previous displayed frame: 0.000000000 seconds]
+    [Time since reference or first frame: 0.000000000 seconds]
+    Frame Number: 1
+    Frame Length: 193 bytes (1544 bits)
+    Capture Length: 193 bytes (1544 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:udp:dtls]
+    [Coloring Rule Name: UDP]
+    [Coloring Rule String: udp]
 Ethernet II, Src: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+    Destination: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        Address: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        Address: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
 Internet Protocol Version 4, Src: 192.168.12.6, Dst: 192.168.11.105
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 179
+    Identification: 0x8317 (33559)
+    Flags: 0x40, Don't fragment
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    ...0 0000 0000 0000 = Fragment Offset: 0
+    Time to Live: 64
+    Protocol: UDP (17)
+    Header Checksum: 0x1e63 [validation disabled]
+    [Header checksum status: Unverified]
+    Source Address: 192.168.12.6
+    Destination Address: 192.168.11.105
 User Datagram Protocol, Src Port: 38096, Dst Port: 5684
+    Source Port: 38096
+    Destination Port: 5684
+    Length: 159
+    Checksum: 0x9970 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+        [Time since first frame: 0.000000000 seconds]
+        [Time since previous frame: 0.000000000 seconds]
+    UDP payload (151 bytes)
 Datagram Transport Layer Security
     DTLSv1.2 Record Layer: Handshake Protocol: Client Hello
         Content Type: Handshake (22)
@@ -20,38 +74,71 @@ Datagram Transport Layer Security
             Fragment Length: 126
             Version: DTLS 1.2 (0xfefd)
             Random: 61f7169e180bc90075c730f7eb19ac4477dd37f384259753033f0f771bd8a3de
+                GMT Unix Time: Jan 30, 2022 23:52:14.000000000 Paris, Madrid
+                Random Bytes: 180bc90075c730f7eb19ac4477dd37f384259753033f0f771bd8a3de
             Session ID Length: 0
             Cookie Length: 0
             Cipher Suites Length: 32
             Cipher Suites (16 suites)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 (0xc02c)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8 (0xc0ae)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CCM_8 (0xc0af)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CCM (0xc0ac)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CCM (0xc0ad)
+                Cipher Suite: TLS_ECDHE_PSK_WITH_AES_128_GCM_SHA256 (0xd001)
+                Cipher Suite: TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384 (0xd002)
+                Cipher Suite: TLS_ECDHE_PSK_WITH_AES_128_CCM_8_SHA256 (0xd003)
+                Cipher Suite: TLS_ECDHE_PSK_WITH_AES_128_CCM_SHA256 (0xd005)
+                Cipher Suite: TLS_PSK_WITH_AES_128_GCM_SHA256 (0x00a8)
+                Cipher Suite: TLS_PSK_WITH_AES_256_GCM_SHA384 (0x00a9)
+                Cipher Suite: TLS_PSK_WITH_AES_128_CCM_8 (0xc0a8)
+                Cipher Suite: TLS_PSK_WITH_AES_256_CCM_8 (0xc0a9)
+                Cipher Suite: TLS_PSK_WITH_AES_128_CCM (0xc0a4)
+                Cipher Suite: TLS_PSK_WITH_AES_256_CCM (0xc0a5)
             Compression Methods Length: 1
             Compression Methods (1 method)
+                Compression Method: null (0)
             Extensions Length: 52
             Extension: supported_groups (len=10)
                 Type: supported_groups (10)
                 Length: 10
                 Supported Groups List Length: 8
                 Supported Groups (4 groups)
+                    Supported Group: secp256r1 (0x0017)
+                    Supported Group: x25519 (0x001d)
+                    Supported Group: x448 (0x001e)
+                    Supported Group: secp384r1 (0x0018)
             Extension: ec_point_formats (len=2)
                 Type: ec_point_formats (11)
                 Length: 2
                 EC point formats Length: 1
                 Elliptic curves point formats (1)
+                    EC point format: uncompressed (0)
             Extension: signature_algorithms (len=6)
                 Type: signature_algorithms (13)
                 Length: 6
                 Signature Hash Algorithms Length: 4
                 Signature Hash Algorithms (2 algorithms)
+                    Signature Algorithm: ecdsa_secp256r1_sha256 (0x0403)
+                        Signature Hash Algorithm Hash: SHA256 (4)
+                        Signature Hash Algorithm Signature: ECDSA (3)
+                    Signature Algorithm: rsa_pkcs1_sha256 (0x0401)
+                        Signature Hash Algorithm Hash: SHA256 (4)
+                        Signature Hash Algorithm Signature: RSA (1)
             Extension: client_certificate_type (len=2)
                 Type: client_certificate_type (19)
                 Length: 2
                 Certificate Type List Length: 1
                 Certificate Type List (1)
+                    Certificate Type: Raw Public Key (0x02)
             Extension: server_certificate_type (len=3)
                 Type: server_certificate_type (20)
                 Length: 3
                 Certificate Type List Length: 2
                 Certificate Type List (2)
+                    Certificate Type: Raw Public Key (0x02)
+                    Certificate Type: X.509 (0x00)
             Extension: extended_master_secret (len=0)
                 Type: extended_master_secret (23)
                 Length: 0
@@ -66,9 +153,63 @@ No.     Time           Source                Destination           Protocol Leng
       2 0.015929229    192.168.11.105        192.168.12.6          DTLSv1.2 102    Hello Verify Request
 
 Frame 2: 102 bytes on wire (816 bits), 102 bytes captured (816 bits) on interface eth1, id 0
+    Interface id: 0 (eth1)
+        Interface name: eth1
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Jan 30, 2022 23:52:14.638814882 Paris, Madrid
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1643583134.638814882 seconds
+    [Time delta from previous captured frame: 0.015929229 seconds]
+    [Time delta from previous displayed frame: 0.015929229 seconds]
+    [Time since reference or first frame: 0.015929229 seconds]
+    Frame Number: 2
+    Frame Length: 102 bytes (816 bits)
+    Capture Length: 102 bytes (816 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:udp:dtls]
+    [Coloring Rule Name: UDP]
+    [Coloring Rule String: udp]
 Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+    Destination: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        Address: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        Address: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
 Internet Protocol Version 4, Src: 192.168.11.105, Dst: 192.168.12.6
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 88
+    Identification: 0x422b (16939)
+    Flags: 0x40, Don't fragment
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    ...0 0000 0000 0000 = Fragment Offset: 0
+    Time to Live: 63
+    Protocol: UDP (17)
+    Header Checksum: 0x60aa [validation disabled]
+    [Header checksum status: Unverified]
+    Source Address: 192.168.11.105
+    Destination Address: 192.168.12.6
 User Datagram Protocol, Src Port: 5684, Dst Port: 38096
+    Source Port: 5684
+    Destination Port: 38096
+    Length: 68
+    Checksum: 0x9915 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+        [Time since first frame: 0.015929229 seconds]
+        [Time since previous frame: 0.015929229 seconds]
+    UDP payload (60 bytes)
 Datagram Transport Layer Security
     DTLSv1.2 Record Layer: Handshake Protocol: Hello Verify Request
         Content Type: Handshake (22)
@@ -90,9 +231,63 @@ No.     Time           Source                Destination           Protocol Leng
       3 0.021947483    192.168.12.6          192.168.11.105        DTLSv1.2 225    Client Hello
 
 Frame 3: 225 bytes on wire (1800 bits), 225 bytes captured (1800 bits) on interface eth1, id 0
+    Interface id: 0 (eth1)
+        Interface name: eth1
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Jan 30, 2022 23:52:14.644833136 Paris, Madrid
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1643583134.644833136 seconds
+    [Time delta from previous captured frame: 0.006018254 seconds]
+    [Time delta from previous displayed frame: 0.006018254 seconds]
+    [Time since reference or first frame: 0.021947483 seconds]
+    Frame Number: 3
+    Frame Length: 225 bytes (1800 bits)
+    Capture Length: 225 bytes (1800 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:udp:dtls]
+    [Coloring Rule Name: UDP]
+    [Coloring Rule String: udp]
 Ethernet II, Src: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+    Destination: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        Address: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        Address: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
 Internet Protocol Version 4, Src: 192.168.12.6, Dst: 192.168.11.105
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 211
+    Identification: 0x8319 (33561)
+    Flags: 0x40, Don't fragment
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    ...0 0000 0000 0000 = Fragment Offset: 0
+    Time to Live: 64
+    Protocol: UDP (17)
+    Header Checksum: 0x1e41 [validation disabled]
+    [Header checksum status: Unverified]
+    Source Address: 192.168.12.6
+    Destination Address: 192.168.11.105
 User Datagram Protocol, Src Port: 38096, Dst Port: 5684
+    Source Port: 38096
+    Destination Port: 5684
+    Length: 191
+    Checksum: 0x9990 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+        [Time since first frame: 0.021947483 seconds]
+        [Time since previous frame: 0.006018254 seconds]
+    UDP payload (183 bytes)
 Datagram Transport Layer Security
     DTLSv1.2 Record Layer: Handshake Protocol: Client Hello
         Content Type: Handshake (22)
@@ -108,39 +303,72 @@ Datagram Transport Layer Security
             Fragment Length: 158
             Version: DTLS 1.2 (0xfefd)
             Random: 61f7169e180bc90075c730f7eb19ac4477dd37f384259753033f0f771bd8a3de
+                GMT Unix Time: Jan 30, 2022 23:52:14.000000000 Paris, Madrid
+                Random Bytes: 180bc90075c730f7eb19ac4477dd37f384259753033f0f771bd8a3de
             Session ID Length: 0
             Cookie Length: 32
             Cookie: fe4ea1ad9e091d66751f578fcdde1480aad99263e6a53904c9bcf54b8cc07653
             Cipher Suites Length: 32
             Cipher Suites (16 suites)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 (0xc02c)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8 (0xc0ae)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CCM_8 (0xc0af)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CCM (0xc0ac)
+                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CCM (0xc0ad)
+                Cipher Suite: TLS_ECDHE_PSK_WITH_AES_128_GCM_SHA256 (0xd001)
+                Cipher Suite: TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384 (0xd002)
+                Cipher Suite: TLS_ECDHE_PSK_WITH_AES_128_CCM_8_SHA256 (0xd003)
+                Cipher Suite: TLS_ECDHE_PSK_WITH_AES_128_CCM_SHA256 (0xd005)
+                Cipher Suite: TLS_PSK_WITH_AES_128_GCM_SHA256 (0x00a8)
+                Cipher Suite: TLS_PSK_WITH_AES_256_GCM_SHA384 (0x00a9)
+                Cipher Suite: TLS_PSK_WITH_AES_128_CCM_8 (0xc0a8)
+                Cipher Suite: TLS_PSK_WITH_AES_256_CCM_8 (0xc0a9)
+                Cipher Suite: TLS_PSK_WITH_AES_128_CCM (0xc0a4)
+                Cipher Suite: TLS_PSK_WITH_AES_256_CCM (0xc0a5)
             Compression Methods Length: 1
             Compression Methods (1 method)
+                Compression Method: null (0)
             Extensions Length: 52
             Extension: supported_groups (len=10)
                 Type: supported_groups (10)
                 Length: 10
                 Supported Groups List Length: 8
                 Supported Groups (4 groups)
+                    Supported Group: secp256r1 (0x0017)
+                    Supported Group: x25519 (0x001d)
+                    Supported Group: x448 (0x001e)
+                    Supported Group: secp384r1 (0x0018)
             Extension: ec_point_formats (len=2)
                 Type: ec_point_formats (11)
                 Length: 2
                 EC point formats Length: 1
                 Elliptic curves point formats (1)
+                    EC point format: uncompressed (0)
             Extension: signature_algorithms (len=6)
                 Type: signature_algorithms (13)
                 Length: 6
                 Signature Hash Algorithms Length: 4
                 Signature Hash Algorithms (2 algorithms)
+                    Signature Algorithm: ecdsa_secp256r1_sha256 (0x0403)
+                        Signature Hash Algorithm Hash: SHA256 (4)
+                        Signature Hash Algorithm Signature: ECDSA (3)
+                    Signature Algorithm: rsa_pkcs1_sha256 (0x0401)
+                        Signature Hash Algorithm Hash: SHA256 (4)
+                        Signature Hash Algorithm Signature: RSA (1)
             Extension: client_certificate_type (len=2)
                 Type: client_certificate_type (19)
                 Length: 2
                 Certificate Type List Length: 1
                 Certificate Type List (1)
+                    Certificate Type: Raw Public Key (0x02)
             Extension: server_certificate_type (len=3)
                 Type: server_certificate_type (20)
                 Length: 3
                 Certificate Type List Length: 2
                 Certificate Type List (2)
+                    Certificate Type: Raw Public Key (0x02)
+                    Certificate Type: X.509 (0x00)
             Extension: extended_master_secret (len=0)
                 Type: extended_master_secret (23)
                 Length: 0
@@ -155,9 +383,63 @@ No.     Time           Source                Destination           Protocol Leng
       4 0.064504090    192.168.11.105        192.168.12.6          DTLSv1.2 516    Server Hello, Certificate, Server Key Exchange, Certificate Request, Server Hello Done
 
 Frame 4: 516 bytes on wire (4128 bits), 516 bytes captured (4128 bits) on interface eth1, id 0
+    Interface id: 0 (eth1)
+        Interface name: eth1
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Jan 30, 2022 23:52:14.687389743 Paris, Madrid
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1643583134.687389743 seconds
+    [Time delta from previous captured frame: 0.042556607 seconds]
+    [Time delta from previous displayed frame: 0.042556607 seconds]
+    [Time since reference or first frame: 0.064504090 seconds]
+    Frame Number: 4
+    Frame Length: 516 bytes (4128 bits)
+    Capture Length: 516 bytes (4128 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:udp:dtls:pkcs-1]
+    [Coloring Rule Name: UDP]
+    [Coloring Rule String: udp]
 Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+    Destination: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        Address: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        Address: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
 Internet Protocol Version 4, Src: 192.168.11.105, Dst: 192.168.12.6
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 502
+    Identification: 0x422f (16943)
+    Flags: 0x40, Don't fragment
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    ...0 0000 0000 0000 = Fragment Offset: 0
+    Time to Live: 63
+    Protocol: UDP (17)
+    Header Checksum: 0x5f08 [validation disabled]
+    [Header checksum status: Unverified]
+    Source Address: 192.168.11.105
+    Destination Address: 192.168.12.6
 User Datagram Protocol, Src Port: 5684, Dst Port: 38096
+    Source Port: 5684
+    Destination Port: 38096
+    Length: 482
+    Checksum: 0x9ab3 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+        [Time since first frame: 0.064504090 seconds]
+        [Time since previous frame: 0.042556607 seconds]
+    UDP payload (474 bytes)
 Datagram Transport Layer Security
     DTLSv1.2 Record Layer: Handshake Protocol: Server Hello
         Content Type: Handshake (22)
@@ -173,6 +455,8 @@ Datagram Transport Layer Security
             Fragment Length: 103
             Version: DTLS 1.2 (0xfefd)
             Random: 61f7169e41d176ec67966d3181f92ebf31311a9307465d4b212b4393eddcc0e6
+                GMT Unix Time: Jan 30, 2022 23:52:14.000000000 Paris, Madrid
+                Random Bytes: 41d176ec67966d3181f92ebf31311a9307465d4b212b4393eddcc0e6
             Session ID Length: 32
             Session ID: 9c36d1a733f45df080a3ef6d0a6ee19b21f18d5549ba176da996cbd681b8af88
             Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
@@ -194,6 +478,7 @@ Datagram Transport Layer Security
                 Length: 2
                 EC point formats Length: 1
                 Elliptic curves point formats (1)
+                    EC point format: uncompressed (0)
             Extension: connection_id (len=7)
                 Type: connection_id (54)
                 Length: 7
@@ -234,6 +519,15 @@ Datagram Transport Layer Security
             Fragment Offset: 0
             Fragment Length: 144
             EC Diffie-Hellman Server Params
+                Curve Type: named_curve (0x03)
+                Named Curve: secp256r1 (0x0017)
+                Pubkey Length: 65
+                Pubkey: 048613cc457d355e04b897a371e85409b1d8e678d67507c1f537e3c91da4890c0a4d4585…
+                Signature Algorithm: ecdsa_secp256r1_sha256 (0x0403)
+                    Signature Hash Algorithm Hash: SHA256 (4)
+                    Signature Hash Algorithm Signature: ECDSA (3)
+                Signature Length: 71
+                Signature: 304502205223af7d4537f277a8e0834376b0bce5c3831e79b2219a49110beae6a85fff73…
     DTLSv1.2 Record Layer: Handshake Protocol: Certificate Request
         Content Type: Handshake (22)
         Version: DTLS 1.2 (0xfefd)
@@ -248,8 +542,12 @@ Datagram Transport Layer Security
             Fragment Length: 8
             Certificate types count: 1
             Certificate types (1 type)
+                Certificate type: ECDSA Sign (64)
             Signature Hash Algorithms Length: 2
             Signature Hash Algorithms (1 algorithm)
+                Signature Algorithm: ecdsa_secp256r1_sha256 (0x0403)
+                    Signature Hash Algorithm Hash: SHA256 (4)
+                    Signature Hash Algorithm Signature: ECDSA (3)
             Distinguished Names Length: 0
     DTLSv1.2 Record Layer: Handshake Protocol: Server Hello Done
         Content Type: Handshake (22)
@@ -268,9 +566,63 @@ No.     Time           Source                Destination           Protocol Leng
       5 0.110459753    192.168.12.6          192.168.11.105        DTLSv1.2 433    Certificate, Client Key Exchange, Certificate Verify, Change Cipher Spec, Connection ID
 
 Frame 5: 433 bytes on wire (3464 bits), 433 bytes captured (3464 bits) on interface eth1, id 0
+    Interface id: 0 (eth1)
+        Interface name: eth1
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Jan 30, 2022 23:52:14.733345406 Paris, Madrid
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1643583134.733345406 seconds
+    [Time delta from previous captured frame: 0.045955663 seconds]
+    [Time delta from previous displayed frame: 0.045955663 seconds]
+    [Time since reference or first frame: 0.110459753 seconds]
+    Frame Number: 5
+    Frame Length: 433 bytes (3464 bits)
+    Capture Length: 433 bytes (3464 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:udp:dtls:pkcs-1]
+    [Coloring Rule Name: UDP]
+    [Coloring Rule String: udp]
 Ethernet II, Src: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+    Destination: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        Address: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        Address: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
 Internet Protocol Version 4, Src: 192.168.12.6, Dst: 192.168.11.105
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 419
+    Identification: 0x8322 (33570)
+    Flags: 0x40, Don't fragment
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    ...0 0000 0000 0000 = Fragment Offset: 0
+    Time to Live: 64
+    Protocol: UDP (17)
+    Header Checksum: 0x1d68 [validation disabled]
+    [Header checksum status: Unverified]
+    Source Address: 192.168.12.6
+    Destination Address: 192.168.11.105
 User Datagram Protocol, Src Port: 38096, Dst Port: 5684
+    Source Port: 38096
+    Destination Port: 5684
+    Length: 399
+    Checksum: 0x9a60 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+        [Time since first frame: 0.110459753 seconds]
+        [Time since previous frame: 0.045955663 seconds]
+    UDP payload (391 bytes)
 Datagram Transport Layer Security
     DTLSv1.2 Record Layer: Handshake Protocol: Certificate
         Content Type: Handshake (22)
@@ -305,6 +657,8 @@ Datagram Transport Layer Security
             Fragment Offset: 0
             Fragment Length: 66
             EC Diffie-Hellman Client Params
+                Pubkey Length: 65
+                Pubkey: 04077a5b33655b189b8376811aa34b502ff1aecaf97fd54b1155a639d78665958f5b03e2…
     DTLSv1.2 Record Layer: Handshake Protocol: Certificate Verify
         Content Type: Handshake (22)
         Version: DTLS 1.2 (0xfefd)
@@ -318,6 +672,8 @@ Datagram Transport Layer Security
             Fragment Offset: 0
             Fragment Length: 74
             Signature Algorithm: ecdsa_secp256r1_sha256 (0x0403)
+                Signature Hash Algorithm Hash: SHA256 (4)
+                Signature Hash Algorithm Signature: ECDSA (3)
             Signature length: 70
             Signature: 3044022100a621dcfd568553f36bbbbf47f284d30e8463be00f08e79e6d41b7d9f1ca9de…
     DTLSv1.2 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec
@@ -340,9 +696,63 @@ No.     Time           Source                Destination           Protocol Leng
       6 0.143691320    192.168.11.105        192.168.12.6          DTLSv1.2 117    Change Cipher Spec, Encrypted Handshake Message
 
 Frame 6: 117 bytes on wire (936 bits), 117 bytes captured (936 bits) on interface eth1, id 0
+    Interface id: 0 (eth1)
+        Interface name: eth1
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Jan 30, 2022 23:52:14.766576973 Paris, Madrid
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1643583134.766576973 seconds
+    [Time delta from previous captured frame: 0.033231567 seconds]
+    [Time delta from previous displayed frame: 0.033231567 seconds]
+    [Time since reference or first frame: 0.143691320 seconds]
+    Frame Number: 6
+    Frame Length: 117 bytes (936 bits)
+    Capture Length: 117 bytes (936 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:udp:dtls]
+    [Coloring Rule Name: UDP]
+    [Coloring Rule String: udp]
 Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+    Destination: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        Address: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        Address: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
 Internet Protocol Version 4, Src: 192.168.11.105, Dst: 192.168.12.6
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 103
+    Identification: 0x4230 (16944)
+    Flags: 0x40, Don't fragment
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    ...0 0000 0000 0000 = Fragment Offset: 0
+    Time to Live: 63
+    Protocol: UDP (17)
+    Header Checksum: 0x6096 [validation disabled]
+    [Header checksum status: Unverified]
+    Source Address: 192.168.11.105
+    Destination Address: 192.168.12.6
 User Datagram Protocol, Src Port: 5684, Dst Port: 38096
+    Source Port: 5684
+    Destination Port: 38096
+    Length: 83
+    Checksum: 0x9924 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+        [Time since first frame: 0.143691320 seconds]
+        [Time since previous frame: 0.033231567 seconds]
+    UDP payload (75 bytes)
 Datagram Transport Layer Security
     DTLSv1.2 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec
         Content Type: Change Cipher Spec (20)
@@ -363,9 +773,63 @@ No.     Time           Source                Destination           Protocol Leng
       7 0.148390527    192.168.12.6          192.168.11.105        DTLSv1.2 87     Connection ID
 
 Frame 7: 87 bytes on wire (696 bits), 87 bytes captured (696 bits) on interface eth1, id 0
+    Interface id: 0 (eth1)
+        Interface name: eth1
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Jan 30, 2022 23:52:14.771276180 Paris, Madrid
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1643583134.771276180 seconds
+    [Time delta from previous captured frame: 0.004699207 seconds]
+    [Time delta from previous displayed frame: 0.004699207 seconds]
+    [Time since reference or first frame: 0.148390527 seconds]
+    Frame Number: 7
+    Frame Length: 87 bytes (696 bits)
+    Capture Length: 87 bytes (696 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:udp:dtls]
+    [Coloring Rule Name: UDP]
+    [Coloring Rule String: udp]
 Ethernet II, Src: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06), Dst: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+    Destination: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        Address: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        Address: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
 Internet Protocol Version 4, Src: 192.168.12.6, Dst: 192.168.11.105
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 73
+    Identification: 0x8324 (33572)
+    Flags: 0x40, Don't fragment
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    ...0 0000 0000 0000 = Fragment Offset: 0
+    Time to Live: 64
+    Protocol: UDP (17)
+    Header Checksum: 0x1ec0 [validation disabled]
+    [Header checksum status: Unverified]
+    Source Address: 192.168.12.6
+    Destination Address: 192.168.11.105
 User Datagram Protocol, Src Port: 38096, Dst Port: 5684
+    Source Port: 38096
+    Destination Port: 5684
+    Length: 53
+    Checksum: 0x9906 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+        [Time since first frame: 0.148390527 seconds]
+        [Time since previous frame: 0.004699207 seconds]
+    UDP payload (45 bytes)
 Datagram Transport Layer Security
     DTLSv1.2 Record Layer: Connection ID
         Special Type: Connection ID (25)
@@ -380,9 +844,63 @@ No.     Time           Source                Destination           Protocol Leng
       8 0.154303186    192.168.11.105        192.168.12.6          DTLSv1.2 82     Application Data
 
 Frame 8: 82 bytes on wire (656 bits), 82 bytes captured (656 bits) on interface eth1, id 0
+    Interface id: 0 (eth1)
+        Interface name: eth1
+    Encapsulation type: Ethernet (1)
+    Arrival Time: Jan 30, 2022 23:52:14.777188839 Paris, Madrid
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1643583134.777188839 seconds
+    [Time delta from previous captured frame: 0.005912659 seconds]
+    [Time delta from previous displayed frame: 0.005912659 seconds]
+    [Time since reference or first frame: 0.154303186 seconds]
+    Frame Number: 8
+    Frame Length: 82 bytes (656 bits)
+    Capture Length: 82 bytes (656 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:ip:udp:dtls]
+    [Coloring Rule Name: UDP]
+    [Coloring Rule String: udp]
 Ethernet II, Src: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe), Dst: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+    Destination: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        Address: 02:42:c0:a8:0c:06 (02:42:c0:a8:0c:06)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        Address: 02:42:c0:a8:0c:fe (02:42:c0:a8:0c:fe)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: IPv4 (0x0800)
 Internet Protocol Version 4, Src: 192.168.11.105, Dst: 192.168.12.6
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+        0000 00.. = Differentiated Services Codepoint: Default (0)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 68
+    Identification: 0x4231 (16945)
+    Flags: 0x40, Don't fragment
+        0... .... = Reserved bit: Not set
+        .1.. .... = Don't fragment: Set
+        ..0. .... = More fragments: Not set
+    ...0 0000 0000 0000 = Fragment Offset: 0
+    Time to Live: 63
+    Protocol: UDP (17)
+    Header Checksum: 0x60b8 [validation disabled]
+    [Header checksum status: Unverified]
+    Source Address: 192.168.11.105
+    Destination Address: 192.168.12.6
 User Datagram Protocol, Src Port: 5684, Dst Port: 38096
+    Source Port: 5684
+    Destination Port: 38096
+    Length: 48
+    Checksum: 0x9901 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+        [Time since first frame: 0.154303186 seconds]
+        [Time since previous frame: 0.005912659 seconds]
+    UDP payload (40 bytes)
 Datagram Transport Layer Security
     DTLSv1.2 Record Layer: Application Data Protocol: coap
         Content Type: Application Data (23)
