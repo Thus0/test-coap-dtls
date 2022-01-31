@@ -15,7 +15,6 @@
 * [Google BoringSSL](https://github.com/google/boringssl) (go)
 * [Eclipse Californium](https://www.eclipse.org/californium/) (java)
 * [GnuTLS](https://www.gnutls.org/) (C)
-* [libcoap](https://libcoap.net/) (C)
 * [Mbed TLS](https://tls.mbed.org/) (C)
 * [OpenSSL](https://www.openssl.org/) (C)
 * [Pion DTLS](https://github.com/pion/dtls) (go)
@@ -26,6 +25,7 @@
 
 * [aiocoap](https://github.com/chrysn/aiocoap) (python)
 * [coap-cli.js](https://github.com/avency/coap-cli) (javascript)
+* [libcoap](https://libcoap.net/) (C)
 
 # COAPS proxies and gateways
 
