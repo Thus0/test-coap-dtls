@@ -14,6 +14,8 @@
 
 * [Google BoringSSL](https://github.com/google/boringssl) (go)
 * [Eclipse Californium](https://www.eclipse.org/californium/) (java)
+  * demo [sc-dtls-example-client](https://github.com/eclipse/californium/tree/master/demo-apps/sc-dtls-example-client) 
+  * demo [sc-dtls-example-server](https://github.com/eclipse/californium/tree/master/demo-apps/sc-dtls-example-server) 
 * [GnuTLS](https://www.gnutls.org/) (C)
 * [Mbed TLS](https://tls.mbed.org/) (C)
 * [OpenSSL](https://www.openssl.org/) (C)
@@ -24,6 +26,8 @@
 # COAPS frameworks
 
 * [aiocoap](https://github.com/chrysn/aiocoap) (python)
+* [Eclipse Californium](https://www.eclipse.org/californium/) (java)
+  * demo [cf-secure](https://github.com/eclipse/californium/tree/master/demo-apps/cf-secure) 
 * [coap-cli.js](https://github.com/avency/coap-cli) (javascript)
 * [libcoap](https://libcoap.net/) (C)
 
