@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-01-30 23:05
+# last modified: 2022-02-03 00:51
 
 version: "3.9"
 
@@ -15,7 +15,7 @@ services:
   #
   router-coap:
     build: router
-    container_name: router-coap
+    container_name: router-ioterop
     privileged: true
     cap_add:
       - NET_ADMIN
@@ -525,6 +525,43 @@ services:
     networks:
       inter_net:
         ipv4_address: 192.168.11.202
+
+  #
+  # bootstrap-leshan
+  #
+  bootstrap-leshan:
+    build:
+      context: ./leshan
+      target: bootstrap
+    container_name: bootstrap-leshan
+    ports:
+      - 8080:8080 
+      - 5683:5683     # coap:udp
+      - 5684:5684     # coap:dtls
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.203
+
+  #
+  # server-leshan
+  #
+  server-leshan:
+    build:
+      context: ./leshan
+      target: server
+    container_name: server-leshan
+    ports:
+      - 8081:8081 
+      - 5783:5783
+      - 5784:5784
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.204
+
 
 ######################################################################
 # NETWORKS
