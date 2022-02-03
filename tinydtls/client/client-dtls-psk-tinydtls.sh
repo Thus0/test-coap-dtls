@@ -1,8 +1,11 @@
 #!/bin/sh
 # description: DTLS-PSK client with tinydls library
 # environment variables:
-#   - DTLS_SERVER (default: 192.168.11.110)
-#   - DTLS_PORT   (default: 5684)
+#   - DTLS_SERVER  (default: 192.168.11.110)
+#   - DTLS_PORT    (default: 5684)
+#   - PSK_IDENTITY (default: Client_Identity) 
+#   - PSK_KEY      (default: 123456789) 
+# 
 #
 #        author: Thus0
 # last modified: 2022-01-30 16:28
