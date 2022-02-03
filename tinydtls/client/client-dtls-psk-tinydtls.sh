@@ -13,6 +13,8 @@ set -e
 # Default environment variables
 [ -z ${DTLS_SERVER} ] && DTLS_SERVER=192.168.11.110
 [ -z ${DTLS_PORT} ] && DTLS_PORT=5684
+[ -z ${PSK_IDENTITY} ] && PSK_IDENTITY=Client_Identity
+[ -z ${PSK_KEY} ] && PSK_KEY=123456789
 
 # Configuration
 CLIENT_BIN=/app/tinydtls-develop/tests/dtls-client
