@@ -55,7 +55,7 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 
 # Serveur LwM2M
 
-* demo [Eclipse leshan] (https://www.eclipse.org/leshan/) 
+* demo [Eclipse leshan](https://www.eclipse.org/leshan/) 
 
 # Serveur/Broker COAP
 
