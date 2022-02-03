@@ -1,5 +1,5 @@
 #!/bin/sh
-# description: DTLS client with tinydls library
+# description: DTLS-PSK client with tinydls library
 # environment variables:
 #   - DTLS_SERVER (default: 192.168.11.110)
 #   - DTLS_PORT   (default: 5684)
