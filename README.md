@@ -1,4 +1,4 @@
-# test COAPS / COAP-DTLS
+# test LwM2M / COAP / DTLS / UDP / IP
 
 * author: Thus0
 * last modified: 2022-01-30 21:16
