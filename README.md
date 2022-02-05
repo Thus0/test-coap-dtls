@@ -54,14 +54,30 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 
 * [aiocoap](https://github.com/chrysn/aiocoap) (python)
   * _[RFC7252](https://tools.ietf.org/html/rfc7252) (CoAP): Supported for clients and servers. Multicast is supported on the server side, and partially for clients. DTLS is supported but experimental, and lacking some security properties. No caching is done inside the library._
+  * _RFC7641 (Observe): Basic support for clients and servers. Reordering, re-registration, and active cancellation are missing._
+  * _RFC7959 (Blockwise): Supported both for atomic and random access._
+  * _RFC7967 (No-Response): Supported._
+  * _RFC8132 (PATCH/FETCH): Types and codes known, FETCH observation supported._
   * _[RFC8323](https://tools.ietf.org/html/rfc8323) (TCP, WebSockets): Supports CoAP over TCP, TLS, and WebSockets (both over HTTP and HTTPS). The TLS parts are server-certificate only; preshared, raw public keys and client certificates are not supported yet._ 
   * _[RFC8613](https://tools.ietf.org/html/rfc8613) (OSCORE): Full support client-side; protected servers can be implemented based on it but are not automatic yet._
+  * _draft-ietf-core-resource-directory: A standalone resource directory server is provided along with a library function to register at one. They lack support for groups and security considerations, and are generally rather simplistic._
   * _[draft-ietf-core-oscore-groupcomm-11](https://tools.ietf.org/html/draft-ietf-core-oscore-groupcomm-11) (Group OSCORE): Supported for both group and pairwise mode in groups that are fully known. (The lack of an implemented joining or persistence mechanism makes this impractical for anything but experimentation.)_
 * [Eclipse Californium](https://www.eclipse.org/californium/) (java)
   * demo [cf-secure](https://github.com/eclipse/californium/tree/master/demo-apps/cf-secure) 
 * [coap-cli.js](https://github.com/avency/coap-cli) (javascript)
 * [libcoap](https://libcoap.net/) (C)
+  * _[RFC7252](https://tools.ietf.org/html/rfc7252): The Constrained Application Protocol (CoAP)_ 
+  * _RFC7641: Observing Resources in the Constrained Application Protocol (CoAP)_
+  * _RFC7959: Block-Wise Transfers in the Constrained Application Protocol (CoAP)_
+  * _RFC7967: Constrained Application Protocol (CoAP) Option for No Server Response_
+  * _RFC8132: PATCH and FETCH Methods for the Constrained Application Protocol (CoAP)_
+  * _[RFC8323](https://tools.ietf.org/html/rfc8323): CoAP (Constrained Application Protocol) over TCP, TLS, and WebSockets [No WebSockets support]_ 
+  * _RFC8768: Constrained Application Protocol (CoAP) Hop-Limit Option_
   * _The library is designed to support transport layer security utilizing frameworks such as **GnuTLS**, **OpenSSL**, **Mbed TLS**, or **tinydtls**._ 
+    * **OpenSSL** (Minimum version 1.1.0) : **DTLS-CERT**, **DTLS-PSK** and PKCS11
+    * **GnuTLS** (Minimum version 3.3.0) : **DTLS-CERT**, **DTLS-PSK**, **DTLS-RPK** (3.6.6+) and PKCS11
+    * **Mbed TLS** (Minimum version 2.7.10) : **DTLS-CERT** and **DTLS-PSK**
+    * **TinyDTLS** : **DTLS-PSK** and **DTLS-RPK** (DTLS Only)
 
 # COAPS proxies and gateways
 
