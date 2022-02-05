@@ -90,7 +90,7 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
   * _**DTLS-RPK** for CoAP implemented using **tinydtls** with raw public key (RFC 7252)_
 
 # LWM2M frameworks
-* [AVSystem Anjay](https://github.com/AVSystem/Anjay)
+* [AVSystem Anjay](https://github.com/AVSystem/Anjay) (C)
   * _LwM2M Security modes_:
     * **DTLS-CERT** (if supported by backend TLS library)
     * **DTLS-PSK** (if supported by backend TLS library)
