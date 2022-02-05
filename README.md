@@ -17,7 +17,8 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 * [Google BoringSSL](https://github.com/google/boringssl) (go)
   * [bssl client](https://github.com/google/boringssl/blob/master/tool/client.cc)
   * [bssl server](https://github.com/google/boringssl/blob/master/tool/server.cc)
-* [Eclipse Californium](https://www.eclipse.org/californium/) (java)
+* [Eclise Scandium](https://github.com/eclipse/californium/tree/master/scandium-core) (java) - DTLS1.2
+  * It implements DTLS 1.2 to secure your application through ECC with pre-shared keys, certificates, or raw public keys._ 
   * patch demo [sc-dtls-example-client](https://github.com/Thus0/test-coap-dtls/blob/main/californium/files/demo-apps/sc-dtls-example-client/src/main/java/org/eclipse/californium/scandium/examples/ExampleDTLSClient.java) 
   * patch demo [sc-dtls-example-server](https://github.com/Thus0/test-coap-dtls/blob/main/californium/files/demo-apps/sc-dtls-example-server/src/main/java/org/eclipse/californium/scandium/examples/ExampleDTLSServer.java) 
 * [GnuTLS](https://www.gnutls.org/) (C) - DTLS1.2
