@@ -1,6 +1,6 @@
 # file: docker-compose.yml
 #        author: Thus0
-# last modified: 2022-02-03 00:51
+# last modified: 2022-02-05 09:58
 
 version: "3.9"
 
@@ -10,9 +10,7 @@ services:
 # PSEUDO ROUTER 
 ######################################################################
 
-  #
-  # router-coap
-  #
+# router-coap
   router-coap:
     build: router
     container_name: router-ioterop
@@ -32,13 +30,12 @@ services:
     volumes:
       - "./share/dumps:/app/dumps"
 
+
 ######################################################################
 # DTLS CLIENTS
 ######################################################################
 
-  #
-  # client-aiocoap
-  #
+# client-aiocoap
   client-aiocoap:
     build:
       context: ./aiocoap
@@ -46,19 +43,21 @@ services:
     container_name: client-aiocoap
     cap_add:
       - NET_ADMIN
+    depends_on:
+      - router-coap
     environment:
       DTLS_SERVER: 192.168.11.101
       DTLS_PORT: 5684
       GATEWAY: 192.168.12.254
+    links:
+      - "serveur-aiocoap:serveur" 
     volumes:
       - "./share/dumps:/app/dumps"
     networks:
       operator_net:
         ipv4_address: 192.168.12.3
 
-  #
-  # client-libcoap
-  #
+# client-libcoap
   client-libcoap:
     build:
       context: ./libcoap
@@ -76,9 +75,7 @@ services:
       operator_net:
         ipv4_address: 192.168.12.4
 
-  #
-  # client-coap-cli
-  #
+# client-coap-cli
   client-coap-cli:
     build: coap-cli
     container_name: client-coap-cli
@@ -94,9 +91,7 @@ services:
       operator_net:
         ipv4_address: 192.168.12.5
 
-  #
-  # client-californium
-  #
+# client-californium
   client-californium:
     build:
       context: ./californium
@@ -114,9 +109,7 @@ services:
       operator_net:
         ipv4_address: 192.168.12.6
 
-  #
-  # client-gnutls
-  #
+# client-gnutls
   client-gnutls:
     build:
       context: ./gnutls
@@ -134,9 +127,7 @@ services:
       operator_net:
         ipv4_address: 192.168.12.7
 
-  #
-  # client-mbedtls
-  #
+# client-mbedtls
   client-mbedtls:
     build:
       context: ./mbedtls
@@ -154,9 +145,7 @@ services:
       operator_net:
         ipv4_address: 192.168.12.8
   
-  #
-  # client-wolfssl
-  #
+# client-wolfssl
   client-wolfssl:
     build:
       context: ./wolfssl
@@ -174,9 +163,7 @@ services:
       operator_net:
         ipv4_address: 192.168.12.9
 
-  #
-  # client-tinydtls
-  #
+# client-tinydtls
   client-tinydtls:
     build:
       context: ./tinydtls
@@ -188,15 +175,15 @@ services:
       DTLS_SERVER: 192.168.11.110
       DTLS_PORT: 5684
       GATEWAY: 192.168.12.254
+      PSK_IDENTITY: "Client_Identity"
+      PSK_KEY: ${PSK_KEY}
     volumes:
       - "./share/dumps:/app/dumps"
     networks:
       operator_net:
         ipv4_address: 192.168.12.10
   
-  #
-  # client-boringssl
-  #
+# client-boringssl
   client-boringssl:
     build:
       context: ./boringssl
@@ -214,9 +201,7 @@ services:
       operator_net:
         ipv4_address: 192.168.12.11
 
-  #
-  # client-freecoap
-  #
+# client-freecoap
   client-freecoap:
     build:
       context: ./freecoap
@@ -234,9 +219,7 @@ services:
       operator_net:
         ipv4_address: 192.168.12.12
 
-  #
-  # client-piondtls
-  #
+# client-piondtls
   client-piondtls:
     build:
       context: ./piondtls
@@ -254,9 +237,7 @@ services:
       operator_net:
         ipv4_address: 192.168.12.13
 
-  #
-  # client-openssl
-  #
+# client-openssl
   client-openssl:
     build:
       context: ./openssl
@@ -274,13 +255,34 @@ services:
       operator_net:
         ipv4_address: 192.168.12.14
 
+# client-wakaama
+  client-wakaama:
+    build:
+      context: ./wakaama
+      target: client
+    container_name: client-wakaama
+    cap_add:
+      - NET_ADMIN
+    environment:
+      CLIENT_LIFETIME: 300
+      DTLS_PORT: 5684
+      DTLS_SERVER: 192.168.11.115
+      ENDPOINT_NAME: "Wakaama_Client"
+      GATEWAY: 192.168.12.254
+      PSK_IDENTITY: "Client_Identity"
+      PSK_KEY: ${PSK_KEY}
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.15
+
+
 ######################################################################
 # DTLS SERVERS
 ######################################################################
 
-  #
-  # server-aiocoap
-  #
+# server-aiocoap
   server-aiocoap:
     build:
       context: ./aiocoap
@@ -294,9 +296,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.103
 
-  #
-  # server-libcoap
-  #
+# server-libcoap
   server-libcoap:
     build:
       context: ./libcoap
@@ -310,9 +310,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.104
   
-  #
-  # server-californium
-  #
+# server-californium
   server-californium:
     build:
       context: ./californium
@@ -326,9 +324,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.106
   
-  #
-  # server-gnutls
-  #
+# server-gnutls
   server-gnutls:
     build:
       context: ./gnutls
@@ -342,9 +338,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.107
 
-  #
-  # server-mbedtls
-  #
+# server-mbedtls
   server-mbedtls:
     build:
       context: ./mbedtls
@@ -358,9 +352,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.108
 
-  #
-  # server-wolfssl
-  #
+# server-wolfssl
   server-wolfssl:
     build:
       context: ./wolfssl
@@ -374,9 +366,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.109
 
-  #
-  # server-tinydtls
-  #
+# server-tinydtls
   server-tinydtls:
     build:
       context: ./tinydtls
@@ -390,9 +380,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.110
 
-  #
-  # server-boringssl
-  #
+# server-boringssl
   server-boringssl:
     build:
       context: ./boringssl
@@ -406,9 +394,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.111
 
-  #
-  # server-freecoap
-  #
+# server-freecoap
   server-freecoap:
     build:
       context: ./freecoap
@@ -422,9 +408,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.112
 
-  #
-  # server-piondtls
-  #
+# server-piondtls
   server-piondtls:
     build:
       context: ./piondtls
@@ -438,9 +422,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.113
 
-  #
-  # server-openssl
-  #
+# server-openssl
   server-openssl:
     build:
       context: ./openssl
@@ -454,13 +436,26 @@ services:
       inter_net:
         ipv4_address: 192.168.11.114
 
+# server-wakaama
+  server-wakaama:
+    build:
+      context: ./wakaama
+      target: server
+    container_name: server-wakaama
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.115
+
+
 ######################################################################
 # COAP SERVERS
 ######################################################################
 
-  #
-  # server-thingsboard
-  #
+# server-thingsboard
   server-thingsboard:
     restart: always
     image: thingsboard/tb-postgres:3.3.3
@@ -502,9 +497,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.201
 
-  #
-  # server-emqx
-  #
+# server-emqx
   server-emqx:
     image: emqx/emqx:latest
     container_name: server-emqx
@@ -526,9 +519,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.202
 
-  #
-  # bootstrap-leshan
-  #
+# bootstrap-leshan
   bootstrap-leshan:
     build:
       context: ./leshan
@@ -544,9 +535,7 @@ services:
       inter_net:
         ipv4_address: 192.168.11.203
 
-  #
-  # server-leshan
-  #
+# server-leshan
   server-leshan:
     build:
       context: ./leshan
@@ -567,9 +556,9 @@ services:
 # NETWORKS
 ######################################################################
 
-##
-## sensor  --- [operator_net] ------- router-bts ------- [inter_net] ------- server
-##              192.168.12.x         .254    .254       192.168.11.x 
+#
+# sensor  --- [operator_net] ------- router-bts ------- [inter_net] ------- server
+#              192.168.12.x         .254    .254       192.168.11.x 
 
 networks:
     operator_net:
