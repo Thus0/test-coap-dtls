@@ -5,11 +5,11 @@
 #   - openssl support
 #
 #        author: Thus0
-# last modified: 2022-02-05 17:18
+# last modified: 2022-02-06 00:40
 
 # Exit on undefined variable and first error
 set -u
-set -e 
+#set -e 
 
 # Configuration
 PREFIX=/usr/local
