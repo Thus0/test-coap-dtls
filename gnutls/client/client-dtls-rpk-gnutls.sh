@@ -1,18 +1,22 @@
 #!/bin/sh
 # description: DTLS client with gnutls library
 # environment variables:
-#   - DTLS_PORT   (default: 5684)
-#   - DTLS_SERVER (default: 192.168.11.107)
+#   - COAPS_HOST       (default: 192.168.11.107)
+#   - COAPS_PORT       (default: 5684)
+#   - RAW_PRIVATE_KEY  (default: /app/client/ssl/client-key.pem)
+#   - RAW_PUBLIC_KEY   (default: /app/client/ssl/client-pub.pem)
 #
 #        author: Thus0
-# last modified: 2022-02-05 17:13
+# last modified: 2022-02-05 23:50
 
 # Exit on first error
 set -e
 
 # Default environment variables
-[ -z ${DTLS_PORT} ] && DTLS_PORT=5684
-[ -z ${DTLS_SERVER} ] && DTLS_SERVER=192.168.11.107
+[ -z ${COAPS_HOST} ] && COAPS_HOST=192.168.11.107
+[ -z ${COAPS_PORT} ] && COAPS_PORT=5684
+[ -z ${RAW_PRIVATE_KEY} ] && RAW_PRIVATE_KEY=ssl/client-key.pem
+[ -z ${RAW_PUBLIC_KEY} ] && RAW_PUBLIC_KEY=ssl/client-pub.pem
 
 # https://gnutls.org/manual/html_node/Encryption-algorithms-used-in-the-record-layer.html#tab_003aciphers
 CIPHERS="+AES-128-CCM-8:+AES-256-CCM-8"
@@ -31,12 +35,11 @@ gnutls-cli \
     --no-dane --no-local-dns \
     --no-ca-verification --no-ocsp \
     --udp \
-    --rawpkkeyfile=ssl/client.key \
-    --rawpkfile=ssl/client.pub \
+    --rawpkkeyfile=${RAW_PRIVATE_KEY} \
+    --rawpkfile=${RAW_PUBLIC_KEY} \
     --priority=SECURE256:+VERS-DTLS1.2:+AES-128-CCM:+MAC-SHA256:+SIGN-ECDSA-SHA256:+ECDHE-ECDSA:+CTYPE-RAWPK \
-    --port=${DTLS_PORT} \
+    --port=${COAPS_PORT} \
     --disable-sni \
-    --logfile=/app/dumps/client-dtls-gnutls.log \
-    ${DTLS_SERVER}
+    ${COAPS_HOST}
 
 # vim: set sw=4 ts=4 et:

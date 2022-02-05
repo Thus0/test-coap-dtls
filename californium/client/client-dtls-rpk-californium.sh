@@ -1,18 +1,18 @@
 #!/bin/sh
 # description: DTLS client with californium framework
 # environment variables:
-#   - DTLS_PORT   (default: 5684)
-#   - DTLS_SERVER (default: 192.168.11.105)
+#   - COAPS_HOST  (default: 192.168.11.105)
+#   - COAPS_PORT  (default: 5684)
 #
 #        author: Thus0
-# last modified: 2022-02-05 17:04
+# last modified: 2022-02-06 00:26
 
 # Exit on first error
 set -e
 
 # Default environment variables
-[ -z ${DTLS_PORT} ] && DTLS_PORT=5684
-[ -z ${DTLS_SERVER} ] && DTLS_SERVER=192.168.11.105
+[ -z ${COAPS_HOST} ] && COAPS_HOST=192.168.11.105
+[ -z ${COAPS_PORT} ] && COAPS_PORT=5684
 
 # Configuration
 CALIFORNIUM_DIR="/app/californium"
@@ -27,6 +27,6 @@ LENGTH=1
 # COAP client (DTLS-RPK)
 java -jar "${DTLS_CLIENT_DIR}/${DTLS_CLIENT_JAR}" \
    ${CLIENTS} ${MESSAGES} ${LENGTH}
-   ${DTLS_SERVER} ${DTLS_PORT}
+   ${COAPS_HOST} ${COAPS_PORT}
 
 # vim: set sw=4 ts=4 et:

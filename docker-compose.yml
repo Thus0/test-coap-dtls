@@ -1,7 +1,7 @@
 # description: docker-compose file
 #
 #        author: Thus0
-# last modified: 2022-02-05 22:14
+# last modified: 2022-02-05 23:48
 
 version: "3.9"
 
@@ -47,8 +47,8 @@ services:
     depends_on:
       - router-coap
     environment:
-      DTLS_SERVER: 192.168.11.101
-      DTLS_PORT: 5684
+      COAPS_HOST: 192.168.11.101
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
     links:
       - "serveur-aiocoap:serveur" 
@@ -67,8 +67,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_SERVER: 192.168.11.101
-      DTLS_PORT: 5684
+      COAPS_HOST: 192.168.11.101
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
@@ -83,8 +83,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_SERVER: 192.168.11.101
-      DTLS_PORT: 5684
+      COAPS_HOST: 192.168.11.101
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
@@ -101,8 +101,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_SERVER: 192.168.11.106
-      DTLS_PORT: 5684
+      COAPS_HOST: 192.168.11.106
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
@@ -119,8 +119,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_SERVER: 192.168.11.107
-      DTLS_PORT: 5684
+      COAPS_HOST: 192.168.11.107
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
@@ -137,8 +137,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_SERVER: 192.168.11.108
-      DTLS_PORT: 5684
+      COAPS_HOST: 192.168.11.108
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
@@ -155,8 +155,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_SERVER: 192.168.11.109
-      DTLS_PORT: 5684
+      COAPS_HOST: 192.168.11.109
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
@@ -173,8 +173,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_PORT: 5684
-      DTLS_SERVER: 192.168.11.110
+      COAPS_HOST: 192.168.11.110
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
       PSK_CLIENT_IDENTITY: "Client_Identity"
       PSK_KEY: ${PSK_KEY}
@@ -193,8 +193,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_SERVER: 192.168.11.111
-      DTLS_PORT: 5684
+      COAPS_HOST: 192.168.11.111
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
@@ -211,8 +211,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_SERVER: 192.168.11.112
-      DTLS_PORT: 5684
+      COAPS_HOST: 192.168.11.112
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
@@ -229,8 +229,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_SERVER: 192.168.11.113
-      DTLS_PORT: 5684
+      COAPS_HOST: 192.168.11.113
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
@@ -247,8 +247,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_SERVER: 192.168.11.114
-      DTLS_PORT: 5684
+      COAPS_HOST: 192.168.11.114
+      COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
@@ -266,8 +266,8 @@ services:
       - NET_ADMIN
     environment:
       CLIENT_LIFETIME: 300
-      DTLS_PORT: 5684
-      DTLS_SERVER: 192.168.11.115
+      COAPS_HOST: 192.168.11.115
+      COAPS_PORT: 5684
       ENDPOINT_NAME: "Wakaama_Client"
       GATEWAY: 192.168.12.254
       PSK_CLIENT_IDENTITY: "Client_Identity"
@@ -287,8 +287,8 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_PORT: 5684
-      DTLS_SERVER: 192.168.11.115
+      COAPS_HOST: 192.168.11.115
+      COAPS_PORT: 5684
       ENDPOINT_NAME: "Anjay_Client"
       GATEWAY: 192.168.12.254
       PSK_CLIENT_IDENTITY: "Client_Identity"

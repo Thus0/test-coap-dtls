@@ -2,21 +2,24 @@
 # description: COAPS server in command line
 #
 #        author: Thus0
-# last modified: 2022-02-05 17:19
+# last modified: 2022-02-05 23:56
 
 # Exit on first error
 set -e
 
+# Default environment variables
+COAPS_HOST=192.168.11.104
+COAPS_PORT=5684
+RAW_PRIVATE_KEY="ssl/server-key.pem"
+
 # Configuration variables
 COAPS_BIN=coap-server-tinydtls
-COAPS_HOST=192.168.11.104
-COAP_PORT=5683
-COAPS_PORT=5684
-COAPS_RPK="ssl/server.key"
 
 # COAPS server (DTLS-RPK)
-"${COAPS_BIN}" -v 6 \
-    -p "${COAP_PORT}" \
-    -M "${COAPS_RPK}" -n 
+"${COAPS_BIN}" \
+    -v 6 \
+    -p "${COAPS_PORT}" \
+    -M "${RAW_PRIVATE_KEY}" \
+    -n 
 
 # vim: set sw=4 ts=4 et:
