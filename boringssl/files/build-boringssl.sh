@@ -2,7 +2,7 @@
 # description: build and install BoringSSL library
 #
 #        author: Thus0
-# last modified: 2022-01-30 20:13
+# last modified: 2022-02-05 08:24
 
 # Exit on undefined variable and first error
 set -u
@@ -22,5 +22,6 @@ git clone --depth 1 https://github.com/google/boringssl.git
 cd /app/boringssl || exit 1
 mkdir build
 cd build
+# to build release : add -DCMAKE_BUILD_TYPE=Release
 cmake -GNinja ..
 ninja
