@@ -55,7 +55,7 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 
 # LWm2M frameworks
 
-* [Eclipse Wakaama](http://www.eclipse.org/wakaama/)
+* [Eclipse Wakaama](http://www.eclipse.org/wakaama/) (C) 
 
 
   * [client](https://github.com/eclipse/wakaama/tree/master/examples/client) 
