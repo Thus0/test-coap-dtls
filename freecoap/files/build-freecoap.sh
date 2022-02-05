@@ -2,7 +2,7 @@
 # description: build and install FreeCoAP
 #
 #        author: Thus0
-# last modified: 2022-01-30 18:18
+# last modified: 2022-02-05 09:15
 
 # Exit on undefined variable and first error
 set -u
@@ -17,7 +17,7 @@ mkdir -p "${PREFIX}"
 # Clone FreeCoAP (tinydtls branch) repository
 cd /app || exit 1
 git clone -b tinydtls --single-branch --depth 1 \
-	https://github.com/keith-cullen/FreeCoAP.git freecoap-tinydtls
+	https://github.com/keith-cullen/FreeCoAP.git freecoap-tinydtls || exit 2
 
 # Patch files
 cp /app/configure.ac /app/freecoap-tinydtls/configure.ac
@@ -34,3 +34,4 @@ autoreconf --install
 make
 make install
 
+# vim: set sw=4 ts=4 et:

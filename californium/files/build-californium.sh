@@ -16,7 +16,8 @@ mkdir -p "${PREFIX}"
 
 # Clone libcoap repository
 cd /app || exit 1
-git clone --depth 1 https://github.com/eclipse/californium.git
+git clone --depth 1 \
+    https://github.com/eclipse/californium.git || exit 2
 
 # Copy local files
 cp -r /app/demo-apps /app/californium/
@@ -26,4 +27,4 @@ rm -rf /app/demo-apps
 cd /app/californium || exit 1
 mvn clean install -DskipTests
 
-# vim: set sw=4 expandtab:
+# vim: set sw=4 ts=4 et:

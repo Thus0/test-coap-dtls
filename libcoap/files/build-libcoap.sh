@@ -2,7 +2,7 @@
 # description: build and install libcoap with tinydtls, gnutls and openssl support
 #
 #        author: Thus0
-# last modified: 2022-01-30 01:10
+# last modified: 2022-02-05 09:16
 
 # Exit on undefined variable and first error
 set -u
@@ -16,7 +16,8 @@ mkdir -p "${PREFIX}"
 
 # Clone libcoap repository
 cd /app || exit 1
-git clone --depth 1 https://github.com/obgm/libcoap.git
+git clone --depth 1 \
+    https://github.com/obgm/libcoap.git || exit 2
 
 # Git pull tinydtls
 cd /app/libcoap || exit 1
@@ -48,4 +49,4 @@ make install
 make
 make install
 
-# vim: set sw=4 tb=4 expandtab:
+# vim: set sw=4 ts=4 et:
