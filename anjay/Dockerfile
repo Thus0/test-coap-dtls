@@ -9,7 +9,8 @@ RUN apk update && apk upgrade && \
     apk add cmake samurai && \
     apk add gcc g++ libc-dev libtool git && \
     apk add zlib zlib-dev && \
-    apk add python3 python3-dev py3-pip py3-jinja2
+    apk add python3 python3-dev py3-pip py3-jinja2 && \
+    apk add mbedtls-dev mbedtls
 
 # Change working directory
 WORKDIR /app
@@ -17,9 +18,9 @@ WORKDIR /app
 # Copy files
 COPY files /app
 
-# Build tinydtls
-RUN ./build-mbedtls.sh
-RUN ./build-tinydtls.sh
+# Build Anjay with DTLS libraries
+#RUN ./build-mbedtls.sh
+#RUN ./build-tinydtls.sh
 RUN ./build-anjay.sh
 
 # STAGE2 : build client image

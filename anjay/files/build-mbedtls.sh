@@ -2,7 +2,7 @@
 # description: build and install mbedtls library
 #
 #        author: Thus0
-# last modified: 2022-02-05 09:16
+# last modified: 2022-02-05 22:30
 
 # Exit on undefined variable and first error
 set -u

@@ -5,7 +5,7 @@
 #   - tinydtls
 #
 #        author: Thus0
-# last modified: 2022-02-05 18:15
+# last modified: 2022-02-05 22:30
 
 # Exit on undefined variable and first error
 set -u
@@ -33,15 +33,15 @@ cmake -DDTLS_BACKEND="mbedtls" /app/anjay
 make -j
 
 # Build anjay with tinydtls
-mkdir /app/build-tinydtls
-cd /app/build-tinydtls || exit 1
-cmake -DDTLS_BACKEND="tinydtls" /app/anjay
-make -j
+#mkdir /app/build-tinydtls
+#cd /app/build-tinydtls || exit 1
+#cmake -DDTLS_BACKEND="tinydtls" /app/anjay
+#make -j
 
 # Build anjay with openssl
-mkdir /app/build-openssl
-cd /app/build-openssl || exit 1
-cmake -DDTLS_BACKEND="openssl" /app/anjay
-make -j
+#mkdir /app/build-openssl
+#cd /app/build-openssl || exit 1
+#cmake -DDTLS_BACKEND="openssl" /app/anjay
+#make -j
 
 # vim: set sw=4 ts=4 et:
