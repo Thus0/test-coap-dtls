@@ -57,6 +57,9 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 
 * [Eclipse Wakaama](http://www.eclipse.org/wakaama/)
 
+
+  * [client](https://github.com/eclipse/wakaama/tree/master/examples/client) 
+
 # Serveur LwM2M
 
 * [Eclipse leshan](https://www.eclipse.org/leshan/) 
