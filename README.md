@@ -21,7 +21,7 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
   * patch demo [sc-dtls-example-client](https://github.com/Thus0/test-coap-dtls/blob/main/californium/files/demo-apps/sc-dtls-example-client/src/main/java/org/eclipse/californium/scandium/examples/ExampleDTLSClient.java) 
   * patch demo [sc-dtls-example-server](https://github.com/Thus0/test-coap-dtls/blob/main/californium/files/demo-apps/sc-dtls-example-server/src/main/java/org/eclipse/californium/scandium/examples/ExampleDTLSServer.java) 
 * [GnuTLS](https://www.gnutls.org/) (C) - DTLS1.2
-  * _"Support for public key methods, including RSA and Elliptic curves, as well as password and key authentication methods such as SRP and PSK protocols"_ 
+  * _"Support for public key methods, including RSA and Elliptic curves, as well as password and key authentication methods such as **SRP** and **PSK** protocols"_ 
     * [PSK](https://www.gnutls.org/manual/gnutls.html#PSK-credentials) 
     * [RPK](https://www.gnutls.org/manual/gnutls.html#Raw-public_002dkey-credentials)
     * [Certificates](https://www.gnutls.org/manual/gnutls.html#Certificate-credentials)
@@ -39,7 +39,7 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
   * patch demo [client/main.go](https://github.com/Thus0/test-coap-dtls/blob/main/piondtls/client/examples/dial/client/main.go)
   * patch demo [server/main.go](https://github.com/Thus0/test-coap-dtls/blob/main/piondtls/server/examples/listen/server/main.go) 
 * [tinydtls](https://projects.eclipse.org/projects/iot.tinydtls) (C) - DTLS1.2
-  * basic support for **DTLS-PSK** and **DTLS-RPK** mode with ECC
+  * _basic support for **DTLS-PSK** and **DTLS-RPK** mode with ECC_
   * [dtls-client](https://github.com/eclipse/tinydtls/blob/develop/tests/dtls-client.c)
     * TODO: patch demo  
   * [dtls-server](https://github.com/eclipse/tinydtls/blob/develop/tests/dtls-server.c)
@@ -60,9 +60,9 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 
 * [emqx-coap](https://github.com/emqx/emqx-coap) (Erlang)
 * [FreeCoAP](https://github.com/keith-cullen/FreeCoAP) (C)
-  * HTTP/CoAP proxy with DTLS support
-  * DTLS-CERT for CoAP implemented using GnuTLS with X.509 certificates (RFC 7252)
-  * DTLS-RPK for CoAP implemented using tinydtls with raw public key (RFC 7252)
+  * _HTTP/CoAP proxy with DTLS support_
+  * _DTLS-CERT for CoAP implemented using GnuTLS with X.509 certificates (RFC 7252)_
+  * _DTLS-RPK for CoAP implemented using tinydtls with raw public key (RFC 7252)_
 
 # LWm2M frameworks
 
