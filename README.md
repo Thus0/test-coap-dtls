@@ -53,6 +53,10 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 # COAPS frameworks
 
 * [aiocoap](https://github.com/chrysn/aiocoap) (python)
+  * _[RFC7252](https://tools.ietf.org/html/rfc7252) (CoAP): Supported for clients and servers. Multicast is supported on the server side, and partially for clients. DTLS is supported but experimental, and lacking some security properties. No caching is done inside the library._
+  * _[RFC8323](https://tools.ietf.org/html/rfc8323) (TCP, WebSockets): Supports CoAP over TCP, TLS, and WebSockets (both over HTTP and HTTPS). The TLS parts are server-certificate only; preshared, raw public keys and client certificates are not supported yet._ 
+  * _[RFC8613(https://tools.ietf.org/html/rfc8613) (OSCORE): Full support client-side; protected servers can be implemented based on it but are not automatic yet._
+  * _[draft-ietf-core-oscore-groupcomm-11](https://tools.ietf.org/html/draft-ietf-core-oscore-groupcomm-11) (Group OSCORE): Supported for both group and pairwise mode in groups that are fully known. (The lack of an implemented joining or persistence mechanism makes this impractical for anything but experimentation.)_
 * [Eclipse Californium](https://www.eclipse.org/californium/) (java)
   * demo [cf-secure](https://github.com/eclipse/californium/tree/master/demo-apps/cf-secure) 
 * [coap-cli.js](https://github.com/avency/coap-cli) (javascript)
