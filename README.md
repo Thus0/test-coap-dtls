@@ -92,10 +92,10 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 # LWM2M frameworks
 * [AVSystem Anjay](https://github.com/AVSystem/Anjay)
   * _LwM2M Security modes_:
-    * **DTLS-CERT* (if supported by backend TLS library)
+    * **DTLS-CERT** (if supported by backend TLS library)
     * **DTLS-PSK** (if supported by backend TLS library)
     * **NoSec mode**
-  * _Supported TLS backends:
+  * _Supported TLS backends_:
     * **OpenSSL** (Minimum 1.1.+)
     * **Mbed TLS** (Minimum 2.0+)
     * **tinydtls** (Minimum 0.9+)
