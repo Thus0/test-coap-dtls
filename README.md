@@ -12,27 +12,38 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 
 # DTLS libraries
 
+* https://en.wikipedia.org/wiki/Datagram_Transport_Layer_Security
+
 * [Google BoringSSL](https://github.com/google/boringssl) (go)
   * [bssl client](https://github.com/google/boringssl/blob/master/tool/client.cc)
   * [bssl server](https://github.com/google/boringssl/blob/master/tool/server.cc)
 * [Eclipse Californium](https://www.eclipse.org/californium/) (java)
   * patch demo [sc-dtls-example-client](https://github.com/Thus0/test-coap-dtls/blob/main/californium/files/demo-apps/sc-dtls-example-client/src/main/java/org/eclipse/californium/scandium/examples/ExampleDTLSClient.java) 
   * patch demo [sc-dtls-example-server](https://github.com/Thus0/test-coap-dtls/blob/main/californium/files/demo-apps/sc-dtls-example-server/src/main/java/org/eclipse/californium/scandium/examples/ExampleDTLSServer.java) 
-* [GnuTLS](https://www.gnutls.org/) (C)
+* [GnuTLS](https://www.gnutls.org/) (C) - DTLS1.2
+  * _"Support for public key methods, including RSA and Elliptic curves, as well as password and key authentication methods such as SRP and PSK protocols"_ 
+    * [PSK](https://www.gnutls.org/manual/gnutls.html#PSK-credentials) 
+    * [RPK](https://www.gnutls.org/manual/gnutls.html#Raw-public_002dkey-credentials)
+    * [Certificates](https://www.gnutls.org/manual/gnutls.html#Certificate-credentials)
   * [gnutls-cli](https://gnutls.org/manual/html_node/gnutls_002dcli-Invocation.html)
   * [gnutls-serv](https://gnutls.org/manual/html_node/gnutls_002dserv-Invocation.html)
-* [Mbed TLS](https://tls.mbed.org/) (C)
+* [Mbed TLS](https://tls.mbed.org/) (C) - DLTS1.2
+  * ticket [Connection ID](https://github.com/ARMmbed/mbedtls/pull/5061) 
   * [mbedtls_dtls_client](https://github.com/ARMmbed/mbedtls/blob/development/programs/ssl/dtls_client.c) 
   * [mbedtls_dtls_server](https://github.com/ARMmbed/mbedtls/blob/development/programs/ssl/dtls_server.c)
 * [OpenSSL](https://www.openssl.org/) (C)
   * [openssl s_client -dtls1_2](https://www.openssl.org/docs/man1.1.1/man1/s_client.html)
   * [openssl s_server -dtls1_2](https://www.openssl.org/docs/man1.1.1/man1/s_server.html)
-* [Pion DTLS](https://github.com/pion/dtls) (go)
+* [Pion DTLS](https://github.com/pion/dtls) (go) - DTLS1.2
+  * ticket [Connection ID](https://github.com/pion/dtls/issues/256)
   * patch demo [client/main.go](https://github.com/Thus0/test-coap-dtls/blob/main/piondtls/client/examples/dial/client/main.go)
   * patch demo [server/main.go](https://github.com/Thus0/test-coap-dtls/blob/main/piondtls/server/examples/listen/server/main.go) 
-* [tinydtls](https://projects.eclipse.org/projects/iot.tinydtls) (C)
-  * TODO: patch demo [dtls-client](https://github.com/eclipse/tinydtls/blob/develop/tests/dtls-client.c)
-  * TODO: patch demo [dtls-server](https://github.com/eclipse/tinydtls/blob/develop/tests/dtls-server.c)
+* [tinydtls](https://projects.eclipse.org/projects/iot.tinydtls) (C) - DTLS1.2
+  * basic support for **DTLS-PSK** and **DTLS-RPK** mode with ECC
+  * [dtls-client](https://github.com/eclipse/tinydtls/blob/develop/tests/dtls-client.c)
+    * TODO: patch demo  
+  * [dtls-server](https://github.com/eclipse/tinydtls/blob/develop/tests/dtls-server.c)
+    * TODO: patch demo 
 * [wolfSSL](https://wolfssl.com) (C)
   * [client](https://github.com/wolfSSL/wolfssl/blob/master/examples/client/client.c)
   * [server](https://github.com/wolfSSL/wolfssl/blob/master/examples/server/server.c)
@@ -51,7 +62,7 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 * [FreeCoAP](https://github.com/keith-cullen/FreeCoAP) (C)
   * HTTP/CoAP proxy with DTLS support
   * DTLS-CERT for CoAP implemented using GnuTLS with X.509 certificates (RFC 7252)
-  * DTLS-RPK for CoAP implemented using tinydtls with raw public key(RFC 7252)
+  * DTLS-RPK for CoAP implemented using tinydtls with raw public key (RFC 7252)
 
 # LWm2M frameworks
 
