@@ -1,8 +1,11 @@
 #!/bin/sh
-# description: build and install libcoap with tinydtls, gnutls and openssl support
+# description: build and install libcoap with :
+#   - tinydtls
+#   - gnutls
+#   - openssl support
 #
 #        author: Thus0
-# last modified: 2022-02-05 09:16
+# last modified: 2022-02-05 17:18
 
 # Exit on undefined variable and first error
 set -u

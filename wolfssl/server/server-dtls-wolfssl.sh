@@ -4,7 +4,7 @@
 #   - DTLS_PORT (default: 5684)
 #
 #        author: Thus0
-# last modified: 2022-01-31 20:21
+# last modified: 2022-02-05 16:47
 
 # Exit on first error
 set -e
@@ -15,7 +15,7 @@ set -e
 # Configuration
 SERVER_BIN=/app/wolfssl/examples/server/server
 
-# DTLS 1.2 server echo
+# DTLS 1.2 server
 "${SERVER_BIN}" \
     -b -p ${DTLS_PORT} \
     -u -v 3 \
@@ -25,4 +25,4 @@ SERVER_BIN=/app/wolfssl/examples/server/server
     -d -V \
     -l ECHDE-ECDSA-AES128-CCM-8
 
-# vim: set sw=4 ts=4 expandtab:
+# vim: set sw=4 ts=4 et:

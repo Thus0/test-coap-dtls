@@ -27,4 +27,4 @@ FROM base as client
 ADD $BASE_URL/leshan-client-demo.jar /opt/leshan/
 CMD ["java", "-jar", "./leshan-client-demo.jar"]
 
-
+# vim: set sw=4 ts=4 et:

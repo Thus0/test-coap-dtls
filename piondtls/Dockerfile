@@ -30,3 +30,4 @@ COPY server /app/server
 RUN /app/server/build-piondtls_server.sh
 CMD ["/app/server/entrypoint.sh"]
 
+# vim: set sw=4 ts=4 et:

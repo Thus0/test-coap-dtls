@@ -21,3 +21,5 @@ RUN npm install
 
 # default command
 CMD ["/app/entrypoint.sh"]
+
+# vim: set sw=4 ts=4 et:

@@ -2,7 +2,7 @@
 # description: COAPS client in command line
 #
 #        author: Thus0
-# last modified: 2022-01-30 23:26
+# last modified: 2022-02-05 17:17
 
 # Exit on firt error
 set -e
@@ -21,8 +21,10 @@ memory_used=$(free -k | grep Mem: | awk '{print $3}')
 # Payload
 PAYLOAD="{'memory_used':${memory_used}, 'lib':'${COAPS_LIB}', 'proto':'coaps', 'auth':'token'}"
 
-# Publish data 
+# COAP client (DTLS-RPK)
 "${COAPS_BIN}" -v 6 -m POST \
     -M "${COAPS_RPK}" -n \
     -e "${PAYLOAD}" \
     "coaps://${COAPS_HOST}:${COAPS_PORT}${COAPS_REST}"
+
+# vim: set sw=4 ts=4 et: 

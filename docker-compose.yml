@@ -1,6 +1,7 @@
-# file: docker-compose.yml
+# description: docker-compose file
+#
 #        author: Thus0
-# last modified: 2022-02-05 09:58
+# last modified: 2022-02-05 18:05
 
 version: "3.9"
 
@@ -172,10 +173,10 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      DTLS_SERVER: 192.168.11.110
       DTLS_PORT: 5684
+      DTLS_SERVER: 192.168.11.110
       GATEWAY: 192.168.12.254
-      PSK_IDENTITY: "Client_Identity"
+      PSK_CLIENT_IDENTITY: "Client_Identity"
       PSK_KEY: ${PSK_KEY}
     volumes:
       - "./share/dumps:/app/dumps"
@@ -269,13 +270,34 @@ services:
       DTLS_SERVER: 192.168.11.115
       ENDPOINT_NAME: "Wakaama_Client"
       GATEWAY: 192.168.12.254
-      PSK_IDENTITY: "Client_Identity"
+      PSK_CLIENT_IDENTITY: "Client_Identity"
       PSK_KEY: ${PSK_KEY}
     volumes:
       - "./share/dumps:/app/dumps"
     networks:
       operator_net:
         ipv4_address: 192.168.12.15
+
+# client-anjay
+  client-anjay:
+    build:
+      context: ./anjay
+      target: client
+    container_name: client-anjay
+    cap_add:
+      - NET_ADMIN
+    environment:
+      DTLS_PORT: 5684
+      DTLS_SERVER: 192.168.11.115
+      ENDPOINT_NAME: "Anjay_Client"
+      GATEWAY: 192.168.12.254
+      PSK_CLIENT_IDENTITY: "Client_Identity"
+      PSK_KEY: ${PSK_KEY}
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.16
 
 
 ######################################################################
@@ -578,3 +600,4 @@ networks:
           - subnet: 192.168.11.0/24
             gateway: 192.168.11.1
 
+# vim: set sw=4 ts=4 et:

@@ -4,7 +4,7 @@
 #   - DTLS_PORT (default: 5684)
 #
 #        author: Thus0
-# last modified: 2022-01-30 13:04
+# last modified: 2022-02-05 17:15
 
 # Exit on first error
 set -e
@@ -23,4 +23,4 @@ gnutls-serv \
     --priority=SECURE256:+VERS-DTLS1.2:+AES-128-CCM-8:+MAC-ALL:+SIGN-ECDSA-SHA256:+CTYPE-RAWPK \
     --port=${DTLS_PORT}
 
-# vim: set sw=4 expandtab:
+# vim: set sw=4 ts=4 et:

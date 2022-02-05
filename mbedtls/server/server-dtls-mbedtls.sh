@@ -4,7 +4,7 @@
 #   - DTLS_PORT (default: 5684)
 #
 #        author: Thus0
-# last modified: 2022-01-30 14:08
+# last modified: 2022-02-05 17:22
 
 # Exit on first error
 set -e
@@ -15,4 +15,4 @@ set -e
 # DTLS server
 mbedtls_dtls_server
 
-# vim: set sw=4 expandtab:
+# vim: set sw=4 ts=4 et:

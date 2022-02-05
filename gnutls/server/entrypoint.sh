@@ -1,9 +1,11 @@
 #!/bin/sh
-# vim: set sw=4 expandtab:
-#        author: Thus0
-# last modified: 2022-01-29 18:04
+# description: container entrypoint
 #
-# Copyright 2022 All rights reserved
+#        author: Thus0
+# last modified: 2022-02-05 17:15
 
-# loop
+# Enter loop
+echo "Entering loop"
 tail -f /dev/null
+
+# vim: set sw=4 ts=4 et:

@@ -28,3 +28,5 @@ CMD ["/app/client/entrypoint.sh"]
 FROM base as server
 COPY server /app/server/
 CMD ["/app/server/entrypoint.sh"]
+
+# vim: set ts=4 ts=4 et:

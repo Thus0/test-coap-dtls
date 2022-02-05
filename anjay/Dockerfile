@@ -4,9 +4,12 @@ LABEL maintainer="Thus0"
 # STAGE1 : build base image
 RUN apk update && apk upgrade && \
     apk add vim openssl openssl-dev && \
+    apk add gnutls gnutls-utils gnutls-dev && \
     apk add autoconf automake make && \
-    apk add gcc libc-dev libtool git && \
-    apk add python3 py3-jinja2
+    apk add cmake samurai && \
+    apk add gcc g++ libc-dev libtool git && \
+    apk add zlib zlib-dev && \
+    apk add python3 python3-dev py3-pip py3-jinja2
 
 # Change working directory
 WORKDIR /app
@@ -14,13 +17,14 @@ WORKDIR /app
 # Copy files
 COPY files /app
 
-# Build and install WolfSSL
-RUN ./build-wolfssl.sh
+# Build tinydtls
+RUN ./build-mbedtls.sh
+RUN ./build-tinydtls.sh
+RUN ./build-anjay.sh
 
 # STAGE2 : build client image
 FROM base as client
-COPY client /app/client
-# PATCH dtls_client
+COPY client /app/client/
 CMD ["/app/client/entrypoint.sh"]
 
 # STAGE2 : build server image

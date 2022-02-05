@@ -5,7 +5,7 @@
 #   - DTLS_PORT   (default: 5684)
 #
 #        author: Thus0
-# last modified: 2022-01-30 16:02
+# last modified: 2022-02-05 16:48
 
 # Exit on first error
 set -e
@@ -20,4 +20,4 @@ SERVER_BIN=/app/wolfssl/examples/client/client
 # TLS 1.3 client
 ${SERVER_BIN} -h ${DTLS_SERVER} -p ${DTLS_PORT} -v 4
 
-# vim: set sw=4 expandtab:
+# vim: set sw=4 ts=4 et:

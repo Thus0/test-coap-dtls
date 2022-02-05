@@ -5,7 +5,7 @@
 #   - DTLS_PORT   (default: 5684)
 #
 #        author: Thus0
-# last modified: 2022-01-30 21:39
+# last modified: 2022-02-05 17:27
 
 # Exit on first error
 set -e
@@ -20,4 +20,4 @@ SERVER_GO=/app/piondtls/examples/listen/selfsign/main.go
 # DTLS 1.2 server
 go run ${SERVER_GO} 
 
-# vim: set sw=4 expandtab:
+# vim: set sw=4 ts=4 et:

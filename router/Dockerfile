@@ -24,3 +24,5 @@ RUN git clone https://github.com/Thus0/dit.git && \
 # Default command
 WORKDIR /app
 CMD ["/app/entrypoint.sh"]
+
+# vim: set sw=4 ts=4 et:
