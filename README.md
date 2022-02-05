@@ -29,6 +29,7 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
   * [gnutls-cli](https://gnutls.org/manual/html_node/gnutls_002dcli-Invocation.html)
   * [gnutls-serv](https://gnutls.org/manual/html_node/gnutls_002dserv-Invocation.html)
 * [Mbed TLS](https://tls.mbed.org/) (C) - DLTS 1.2
+  * _Mbed TLS is a C library that implements cryptographic primitives, X.509 certificate manipulation and the SSL/TLS and DTLS protocols. Its small code footprint makes it suitable for embedded systems._  
   * ticket [Connection ID](https://github.com/ARMmbed/mbedtls/pull/5061) 
   * [mbedtls_dtls_client](https://github.com/ARMmbed/mbedtls/blob/development/programs/ssl/dtls_client.c) 
   * [mbedtls_dtls_server](https://github.com/ARMmbed/mbedtls/blob/development/programs/ssl/dtls_server.c)
