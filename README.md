@@ -50,18 +50,14 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 * [emqx-coap](https://github.com/emqx/emqx-coap) (Erlang)
 * [FreeCoAP](https://github.com/keith-cullen/FreeCoAP) (C)
   * HTTP/CoAP proxy with DTLS support
-  * DTLS-cert for CoAP implemented using GnuTLS with X.509 certificates (RFC 7252)
-  * DTLS-rpk for CoAP implemented using tinydtls with raw public key(RFC 7252)
+  * DTLS-CERT for CoAP implemented using GnuTLS with X.509 certificates (RFC 7252)
+  * DTLS-RPK for CoAP implemented using tinydtls with raw public key(RFC 7252)
 
 # LWm2M frameworks
 
-* [Eclipse Wakaama](http://www.eclipse.org/wakaama/) (C) 
-
-
-
- 
-
-  * [lwm2mclient_tinydtls](https://github.com/eclipse/wakaama/tree/master/examples/client) 
+* [Eclipse Wakaama](https://github.com/eclipse/wakaama/) (C)
+  * [lwm2mclient_tinydtls](https://github.com/eclipse/wakaama/tree/master/examples/client)
+    * DTLS-PSK implemented using tinydtls
 
 # Serveur LwM2M
 
