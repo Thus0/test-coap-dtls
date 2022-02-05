@@ -42,6 +42,7 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
   * patch demo [server/main.go](https://github.com/Thus0/test-coap-dtls/blob/main/piondtls/server/examples/listen/server/main.go) 
 * [tinydtls](https://projects.eclipse.org/projects/iot.tinydtls) (C) - DTLS 1.2
   * _basic support for **DTLS-PSK** and **DTLS-RPK** mode with ECC_
+  * branche [tinydtls - Connection ID](https://github.com/eclipse/tinydtls/tree/feature/connection_id)
   * [dtls-client](https://github.com/eclipse/tinydtls/blob/develop/tests/dtls-client.c)
     * TODO: patch demo  
   * [dtls-server](https://github.com/eclipse/tinydtls/blob/develop/tests/dtls-server.c)
