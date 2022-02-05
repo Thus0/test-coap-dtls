@@ -2,7 +2,7 @@
 # description: build and install tinydtls (develop branch) library
 #
 #        author: Thus0
-# last modified: 2022-02-05 09:12
+# last modified: 2022-02-05 19:53
 
 # Exit on undefined variable and first error
 set -u
@@ -25,5 +25,8 @@ cd /app/tinydtls-develop || exit 1
 ./configure
 make
 make install
+
+# Patch tinydtls path
+sed -i -e 's|#include "tinydtls.h"|#include "tinydtls/tinydtls.h"|' /usr/local/include/tinydtls/sha2/sha2.h
 
 # vim: set sw=4 ts=4 et:
