@@ -89,8 +89,16 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
   * _**DTLS-CERT** for CoAP implemented using **GnuTLS** with X.509 certificates (RFC 7252)_
   * _**DTLS-RPK** for CoAP implemented using **tinydtls** with raw public key (RFC 7252)_
 
-# LWm2M frameworks
-
+# LWM2M frameworks
+* [AVSystem Anjay](https://github.com/AVSystem/Anjay)
+  * _LwM2M Security modes_:
+    * **DTLS-CERT* (if supported by backend TLS library)
+    * **DTLS-PSK** (if supported by backend TLS library)
+    * **NoSec mode**
+  * _Supported TLS backends:
+    * **OpenSSL** (Minimum 1.1.+)
+    * **Mbed TLS** (Minimum 2.0+)
+    * **tinydtls** (Minimum 0.9+)
 * [Eclipse Wakaama](https://github.com/eclipse/wakaama/) (C)
   * [lwm2mclient_tinydtls](https://github.com/eclipse/wakaama/tree/master/examples/client)
     * **DTLS-PSK** implemented using **tinydtls**
