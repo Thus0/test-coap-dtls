@@ -1,0 +1,25 @@
+  . Seeding the random number generator... ok
+
+  . Loading the server cert. and key... ok
+  . Bind on udp/*/5684 ... ok
+  . Setting up the DTLS data... ok
+  . Waiting for a remote connection ... ok
+  . Performing the DTLS handshake... hello verification requested
+  . Waiting for a remote connection ... ok
+  . Performing the DTLS handshake... ok
+  < Read from client: 9 bytes read
+
+Echo this
+
+  > Write to client: 9 bytes written
+
+Echo this
+
+  . Closing the connection... done
+  . Waiting for a remote connection ... ok
+  . Performing the DTLS handshake... failed
+  ! mbedtls_ssl_handshake returned -0x7700
+
+Last error was: -30464 - SSL - An unexpected message was received from our peer
+
+  . Waiting for a remote connection ...

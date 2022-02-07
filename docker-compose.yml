@@ -1,7 +1,7 @@
 # description: docker-compose file
 #
 #        author: Thus0
-# last modified: 2022-02-05 23:48
+# last modified: 2022-02-07 23:37
 
 version: "3.9"
 
@@ -14,7 +14,7 @@ services:
 # router-coap
   router-coap:
     build: router
-    container_name: router-ioterop
+    container_name: router-coap
     privileged: true
     cap_add:
       - NET_ADMIN
@@ -78,7 +78,7 @@ services:
 
 # client-coap-cli
   client-coap-cli:
-    build: coap-cli
+    build: coap-cli.js
     container_name: client-coap-cli
     cap_add:
       - NET_ADMIN
@@ -106,6 +106,7 @@ services:
       GATEWAY: 192.168.12.254
     volumes:
       - "./share/dumps:/app/dumps"
+      - "./share/m2:/root/.m2"
     networks:
       operator_net:
         ipv4_address: 192.168.12.6
@@ -164,12 +165,12 @@ services:
       operator_net:
         ipv4_address: 192.168.12.9
 
-# client-tinydtls
-  client-tinydtls:
+# client-tinydtls-develop
+  client-tinydtls-develop:
     build:
       context: ./tinydtls
-      target: client
-    container_name: client-tinydtls
+      target: client-develop
+    container_name: client-tinydtls-develop
     cap_add:
       - NET_ADMIN
     environment:
@@ -177,7 +178,7 @@ services:
       COAPS_PORT: 5684
       GATEWAY: 192.168.12.254
       PSK_CLIENT_IDENTITY: "Client_Identity"
-      PSK_KEY: ${PSK_KEY}
+      PSK_KEY: 123456789
     volumes:
       - "./share/dumps:/app/dumps"
     networks:
@@ -271,7 +272,7 @@ services:
       ENDPOINT_NAME: "Wakaama_Client"
       GATEWAY: 192.168.12.254
       PSK_CLIENT_IDENTITY: "Client_Identity"
-      PSK_KEY: ${PSK_KEY}
+      PSK_KEY: 1234566789
     volumes:
       - "./share/dumps:/app/dumps"
     networks:
@@ -287,18 +288,38 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      COAPS_HOST: 192.168.11.115
+      COAPS_HOST: 192.168.11.116
       COAPS_PORT: 5684
       ENDPOINT_NAME: "Anjay_Client"
       GATEWAY: 192.168.12.254
       PSK_CLIENT_IDENTITY: "Client_Identity"
-      PSK_KEY: ${PSK_KEY}
+      PSK_KEY: 123456789
     volumes:
       - "./share/dumps:/app/dumps"
     networks:
       operator_net:
         ipv4_address: 192.168.12.16
 
+# client-tinydtls-connection_id
+  client-tinydtls-connection_id:
+    build:
+      context: ./tinydtls
+      target: client-connection_id
+    container_name: client-tinydtls-connection_id
+    cap_add:
+      - NET_ADMIN
+    environment:
+      COAPS_HOST: 192.168.11.117
+      COAPS_PORT: 5684
+      GATEWAY: 192.168.12.254
+      PSK_CLIENT_IDENTITY: "Client_Identity"
+      PSK_KEY: 123456789
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      operator_net:
+        ipv4_address: 192.168.12.17
+  
 
 ######################################################################
 # DTLS SERVERS
@@ -342,6 +363,7 @@ services:
       - NET_ADMIN
     volumes:
       - "./share/dumps:/app/dumps"
+      - "./share/m2:/root/.m2"
     networks:
       inter_net:
         ipv4_address: 192.168.11.106
@@ -388,12 +410,12 @@ services:
       inter_net:
         ipv4_address: 192.168.11.109
 
-# server-tinydtls
-  server-tinydtls:
+# server-tinydtls-develop
+  server-tinydtls-develop:
     build:
       context: ./tinydtls
-      target: server
-    container_name: server-tinydtls
+      target: server-develop
+    container_name: server-tinydtls-develop
     cap_add:
       - NET_ADMIN
     volumes:
@@ -471,6 +493,20 @@ services:
     networks:
       inter_net:
         ipv4_address: 192.168.11.115
+
+# server-tinydtls-connection_id
+  server-tinydtls-connection_id:
+    build:
+      context: ./tinydtls
+      target: server-connection_id
+    container_name: server-tinydtls-connection_id
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - "./share/dumps:/app/dumps"
+    networks:
+      inter_net:
+        ipv4_address: 192.168.11.117
 
 
 ######################################################################
@@ -553,6 +589,7 @@ services:
       - 5684:5684     # coap:dtls
     volumes:
       - "./share/dumps:/app/dumps"
+      - "./share/m2:/root/.m2"
     networks:
       inter_net:
         ipv4_address: 192.168.11.203
@@ -569,6 +606,7 @@ services:
       - 5784:5784
     volumes:
       - "./share/dumps:/app/dumps"
+      - "./share/m2:/root/.m2"
     networks:
       inter_net:
         ipv4_address: 192.168.11.204

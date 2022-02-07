@@ -1,0 +1,18 @@
+21:23:28.960 INFO [] [Configuration]: defaults added COAP.
+21:23:28.964 INFO [] [Configuration]: defaults added SYS.
+21:23:29.100 INFO [] [Configuration]: defaults added DTLS.
+Usage: java -jar ... [PSK] [ECDHE_PSK] [RPK] [X509] [WANT_AUTH|NO_AUTH]
+Default :            [PSK] [ECDHE_PSK] [RPK] [X509]
+21:23:29.103 INFO [] [Configuration]: loading properties from file /app/dumps/test-002/Californium3SecureServer.properties
+21:23:29.141 INFO [] [InMemoryConnectionStore]: Created new InMemoryConnectionStore [capacity: 150000, connection expiration threshold: 1800s]
+21:23:29.146 INFO [] [RandomTokenGenerator]: using tokens of 8 bytes in length
+21:23:29.157 INFO [] [ban]: Started.
+21:23:29.159 INFO [] [CoapEndpoint]: coaps CoapEndpoint uses strict context
+21:23:29.164 INFO [] [BlockwiseLayer]: coaps BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+21:23:29.168 INFO [] [CoapServer]: Starting server
+21:23:29.187 INFO [] [DTLSConnector]: multiple network interfaces, using smallest MTU [IPv4 1500, IPv6 1280]
+21:23:29.192 INFO [] [DTLSConnector]: Starting worker thread [DTLS-Receiver-1-/0.0.0.0:5684]
+21:23:29.192 INFO [] [DTLSConnector]: Starting worker thread [DTLS-Receiver-0-/0.0.0.0:5684]
+21:23:29.192 INFO [] [DTLSConnector]: DTLSConnector listening on /0.0.0.0:5684, recv buf = 106496, send buf = 106496, recv packet size = 16490, MTU = IPv4 1500 / IPv6 1280
+21:23:29.194 INFO [] [CoapEndpoint]: coaps Started endpoint at coaps://0.0.0.0:5684
+Secure CoAP server powered by Scandium (Sc) is listening on port 5684

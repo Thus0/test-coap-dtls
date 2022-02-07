@@ -66,9 +66,9 @@ public class SecureClient {
 		}
 	};
 
-	public static final List<Mode> SUPPORTED_MODES = Arrays.asList(Mode.RPK, 
+	public static final List<Mode> SUPPORTED_MODES = Arrays.asList(Mode.ECDHE_PSK, 
 			Mode.RPK_TRUST);
-	private static final String SERVER_URI = "coaps://192.168.11.105:5684/secure";
+	private static final String SERVER_URI = "coaps://192.168.11.106:5684/secure";
 
 	private final DTLSConnector dtlsConnector;
 	private final Configuration configuration;
@@ -121,7 +121,7 @@ public class SecureClient {
 
 	public static void main(String[] args) throws InterruptedException {
 		System.out.println("Usage: java -cp ... org.eclipse.californium.examples.SecureClient [PSK|ECDHE_PSK] [RPK|RPK_TRUST] [X509|X509_TRUST]");
-		System.out.println("Default:            [PSK] [RPK] [X509]");
+		System.out.println("Default:            [ECDHE_PSK] [RPK_TRUST");
 
 		Configuration configuration = Configuration.createWithFile(CONFIG_FILE, CONFIG_HEADER, DEFAULTS);
 		Configuration.setStandard(configuration);

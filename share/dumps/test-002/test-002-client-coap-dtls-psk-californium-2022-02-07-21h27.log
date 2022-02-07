@@ -1,0 +1,18 @@
+21:27:47.196 INFO [] [Configuration]: defaults added COAP.
+21:27:47.199 INFO [] [Configuration]: defaults added SYS.
+21:27:47.346 INFO [] [Configuration]: defaults added DTLS.
+Usage: java -cp ... org.eclipse.californium.examples.SecureClient [PSK|ECDHE_PSK] [RPK|RPK_TRUST] [X509|X509_TRUST]
+Default:            [ECDHE_PSK] [RPK_TRUST
+21:27:47.350 INFO [] [Configuration]: loading properties from file /app/dumps/test-002/Californium3SecureClient.properties
+21:27:47.382 INFO [] [InMemoryConnectionStore]: Created new InMemoryConnectionStore [capacity: 150000, connection expiration threshold: 1800s]
+21:27:47.389 INFO [] [RandomTokenGenerator]: using tokens of 8 bytes in length
+21:27:47.400 INFO [] [ban]: Started.
+21:27:47.401 INFO [] [CoapEndpoint]: coaps CoapEndpoint uses strict context
+21:27:47.409 INFO [] [BlockwiseLayer]: coaps BlockwiseLayer uses MAX_MESSAGE_SIZE=1024, PREFERRED_BLOCK_SIZE=512, BLOCKWISE_STATUS_LIFETIME=300000, MAX_RESOURCE_BODY_SIZE=8192, BLOCKWISE_STRICT_BLOCK2_OPTION=false
+21:27:47.415 INFO [] [CoapEndpoint]: coaps Endpoint [coaps://0.0.0.0:0] requires an executor to start, using default single-threaded daemon executor
+21:27:47.428 INFO [] [DTLSConnector]: multiple network interfaces, using smallest MTU [IPv4 1500, IPv6 1280]
+21:27:47.431 INFO [] [DTLSConnector]: Starting worker thread [DTLS-Receiver-0-/0.0.0.0:56574]
+21:27:47.431 INFO [] [DTLSConnector]: DTLSConnector listening on /0.0.0.0:56574, recv buf = 106496, send buf = 106496, recv packet size = 16490, MTU = IPv4 1500 / IPv6 1280
+21:27:47.431 INFO [] [DTLSConnector]: Starting worker thread [DTLS-Receiver-1-/0.0.0.0:56574]
+21:27:47.432 INFO [] [CoapEndpoint]: coaps Started endpoint at coaps://0.0.0.0:56574
+21:27:47.433 INFO [] [CoapClient]: started set client endpoint /0.0.0.0:56574

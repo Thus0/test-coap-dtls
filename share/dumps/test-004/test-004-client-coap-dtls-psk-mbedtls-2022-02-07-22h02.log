@@ -1,0 +1,16 @@
+
+  . Seeding the random number generator... ok
+  . Loading the CA root certificate ... ok (0 skipped)
+  . Connecting to udp/localhost/5684... ok
+  . Setting up the DTLS structure... ok
+  . Performing the DTLS handshake... ok
+  . Verifying peer X.509 certificate... ok
+  > Write to server: 9 bytes written
+
+Echo this
+
+  < Read from server: 9 bytes read
+
+Echo this
+
+  . Closing the connection... done

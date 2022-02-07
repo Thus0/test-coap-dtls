@@ -100,8 +100,10 @@ public class CredentialsUtil {
 	public static final String PSK_IDENTITY = "password";
 	public static final byte[] PSK_SECRET = "sesame".getBytes();
 
-	public static final String OPEN_PSK_IDENTITY = "Client_identity";
-	public static final byte[] OPEN_PSK_SECRET = "secretPSK".getBytes();
+	//public static final String OPEN_PSK_IDENTITY = "Client_identity";
+	//public static final byte[] OPEN_PSK_SECRET = "secretPSK".getBytes();
+	public static final String OPEN_PSK_IDENTITY = "Client_Identity";
+	public static final byte[] OPEN_PSK_SECRET = "123456789".getBytes();
 
 	// CID
 	public static final String OPT_CID = "CID:";
