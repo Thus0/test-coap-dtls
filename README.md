@@ -39,7 +39,8 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
   * ticket [Connection ID](https://github.com/ARMmbed/mbedtls/pull/5061) 
   * [mbedtls_dtls_client](https://github.com/ARMmbed/mbedtls/blob/development/programs/ssl/dtls_client.c) 
   * [mbedtls_dtls_server](https://github.com/ARMmbed/mbedtls/blob/development/programs/ssl/dtls_server.c)
-* [OpenSSL](https://www.openssl.org/) (C)
+* [OpenSSL](https://www.openssl.org/) (C) DTLS x.x - TLS 1.3
+  * _The OpenSSL 1.1.1 release includes support for TLSv1.3_ ([more details](https://wiki.openssl.org/index.php/TLS1.3))
   * [openssl s_client -dtls1_2](https://www.openssl.org/docs/man1.1.1/man1/s_client.html)
   * [openssl s_server -dtls1_2](https://www.openssl.org/docs/man1.1.1/man1/s_server.html)
 * [Pion DTLS](https://github.com/pion/dtls) (go) - DTLS 1.2
