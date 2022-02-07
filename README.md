@@ -14,6 +14,10 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
 
 * https://en.wikipedia.org/wiki/Datagram_Transport_Layer_Security
 
+* [axTLS](http://axtls.sourceforge.net/)
+* [BearSSL](https://github.com/nogoegst/bearssl)
+  * _BearSSL is for now considered alpha-level software. This means that it probably still has some bugs, possibly very serious ones [...]_
+* [CycloneSSL](https://oryx-embedded.com/doc/files.html)
 * [Google BoringSSL](https://github.com/google/boringssl) (go)
   * [bssl client](https://github.com/google/boringssl/blob/master/tool/client.cc)
   * [bssl server](https://github.com/google/boringssl/blob/master/tool/server.cc)
@@ -29,12 +33,14 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
     * [Certificates](https://www.gnutls.org/manual/gnutls.html#Certificate-credentials)
   * [gnutls-cli](https://gnutls.org/manual/html_node/gnutls_002dcli-Invocation.html)
   * [gnutls-serv](https://gnutls.org/manual/html_node/gnutls_002dserv-Invocation.html)
+* [MatrixSSL](https://github.com/matrixssl/matrixssl) - TLS1.3
 * [Mbed TLS](https://tls.mbed.org/) (C) - DLTS 1.2
   * _Mbed TLS is a C library that implements cryptographic primitives, X.509 certificate manipulation and the SSL/TLS and DTLS protocols. Its small code footprint makes it suitable for embedded systems._  
   * ticket [Connection ID](https://github.com/ARMmbed/mbedtls/pull/5061) 
   * [mbedtls_dtls_client](https://github.com/ARMmbed/mbedtls/blob/development/programs/ssl/dtls_client.c) 
   * [mbedtls_dtls_server](https://github.com/ARMmbed/mbedtls/blob/development/programs/ssl/dtls_server.c)
-* [OpenSSL](https://www.openssl.org/) (C)
+* [OpenSSL](https://www.openssl.org/) (C) - DTLS x.x - TLS 1.3
+  * _The OpenSSL 1.1.1 release includes support for TLSv1.3_ ([more details](https://wiki.openssl.org/index.php/TLS1.3))
   * [openssl s_client -dtls1_2](https://www.openssl.org/docs/man1.1.1/man1/s_client.html)
   * [openssl s_server -dtls1_2](https://www.openssl.org/docs/man1.1.1/man1/s_server.html)
 * [Pion DTLS](https://github.com/pion/dtls) (go) - DTLS 1.2
@@ -48,7 +54,8 @@ COAPS sensor  --- [operator_net] --- router-coap (NAT) --- [inter_net] --- COAPS
     * TODO: patch demo  
   * [dtls-server](https://github.com/eclipse/tinydtls/blob/develop/tests/dtls-server.c)
     * TODO: patch demo 
-* [wolfSSL](https://wolfssl.com) (C) - DTLS 1.2
+* [wolfSSL](https://wolfssl.com) (C) - DTLS 1.2 - TLS 1.3
+  * _The wolfSSL embedded TLS library is a lightweight, portable, C-language-based SSL/TLS library targeted at IoT, embedded, and RTOS environments primarily because of its size, speed, and feature set. It works seamlessly in desktop, enterprise, and cloud environments as well. wolfSSL supports industry standards up to the current **TLS 1.3** and **DTLS 1.2**_
   * [client](https://github.com/wolfSSL/wolfssl/blob/master/examples/client/client.c)
   * [server](https://github.com/wolfSSL/wolfssl/blob/master/examples/server/server.c)
 
